@@ -47,3 +47,98 @@ function, subroutin, procedural 이라고 부름
 이해하게 될것이다~
 
 ### 2. 남의 클래스 & 남의 인스턴스
+
+우선 클래스, 인스턴스를 분명하게 이해하기 위해서 실습을 해보자
+
+```java
+package study.java;
+
+public class OrhersOOP {
+    public static void main(String[] args){
+        System.out.println(Math.PI);
+        System.out.println(Math.floor(1.8));
+        System.out.println(Math.ceil(1.8));
+    }
+}
+
+```
+
+보면
+
+1. Math 라는 수학 클래스에 PI 라는 변수에 원주율 값이 들어 있는거임
+
+2. Math 라는 클래스에 소수점 값을 버림하는 floor() 라는 메소드
+
+3. 올림 메소드는 ceil()
+
+즉 우리가 코드가 많아짐에 따라 서로 연관된 같은 주제를 가지고 있는
+
+변수와 메소드를 그룹핑한 껍데기 == 클래스 라고 할 수 있음
+
+```java
+import java.io.FileWriter;
+
+// .... 생략
+
+new FileWriter("data.txt")
+```
+
+파일라이터라고 우리가 어떤 정보를 파일에 기록할 때 사용하는 클래스임
+
+앞에 new가 붙으면 data.txt에 파일을 저장하겠다라는 복제본이 생기는거임
+
+이를 변수에 담고 write로 값들을 넣고 close 하면
+
+```java
+
+package study.java;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class OrhersOOP {
+    public static void main(String[] args) throws IOException{
+        FileWriter f1 = new FileWriter("data.txt");
+        f1.write("Hello");
+        f1.write(" java");
+        f1.close();
+    }
+}
+```
+
+실제로 data.txt 가 생기고 hello java 라고 써져 있음
+
+이번에는
+
+```java
+FileWriter f2 = new FileWriter("data2.txt");
+f2.write("Hello");
+f2.write(" java2");
+f2.close();
+```
+
+이렇게 f2 로 담고 하면 새로운 data2.txt가 생성됨
+
+Math 같은 경우는 불러서 있는 그대로 썼고
+
+FileWriter 같은 경우 불러서 복제본을 만들어
+
+FileWriter 형태의 인스턴스에 담고
+
+write() 같은 메소드를 이용하여 값들을 집어넣고 close 메소드로 닫음
+
+이렇게 여러가지로 사용이 가능함
+
+여기서 CLASS 는
+
+system, Math , FileWriter
+
+IMSTANCE 는
+
+f1, f2
+
+    클라스는 하나의 기능 상자 견본이고,
+
+    인스턴스는 그 견본으로 만든 상자에 내용물을 각각 다르게 넣어 만들어낸 상품
+
+### 3 변수와 메소드
