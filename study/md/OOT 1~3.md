@@ -1,10 +1,8 @@
-# OOT
-
-## JAVA OOT Programming
+# JAVA OOT Programming
 
 [출처는 생활코딩](https://www.youtube.com/watch?v=uvYWAfZzb8k&list=PLuHgQVnccGMAb-e41kXPSIpmoz1RvHyN4)
 
-### 1. 소개
+## 1. 소개
 
 method를 다른 언어에서는
 
@@ -46,7 +44,7 @@ function, subroutin, procedural 이라고 부름
 
 이해하게 될것이다~
 
-### 2. 남의 클래스 & 남의 인스턴스
+## 2. 남의 클래스 & 남의 인스턴스
 
 우선 클래스, 인스턴스를 분명하게 이해하기 위해서 실습을 해보자
 
@@ -141,4 +139,51 @@ f1, f2
 
     인스턴스는 그 견본으로 만든 상자에 내용물을 각각 다르게 넣어 만들어낸 상품
 
-### 3 변수와 메소드
+## 3 변수와 메소드
+
+만약 비슷한 코드에 특정 코드만 수정해서 사용한다고 치자
+
+그러면 이런식으로 구현이 가능함
+
+```java
+package study.java;
+
+public class MyOOP {
+    public static String delimiter;
+    public static void main(String[] args) {
+        delimiter = "----";
+        printA();
+        printA();
+        printB();
+        printB();
+
+        delimiter = "####";
+        printA();
+        printA();
+        printB();
+        printB();
+    }
+    private static void printA() {
+        System.out.println(delimiter);
+        System.out.println("A");
+        System.out.println("A");
+    }
+    private static void printB() {
+        System.out.println(delimiter);
+        System.out.println("B");
+        System.out.println("B");
+    }
+}
+```
+
+printA, printB 이렇게 메소드를 만들고
+
+delimiter 변수를 main 클래스 밖으로 빼서 관리하면 굳이 메소드에 일일히 값 안넣어도 됨
+
+여기서 printA, printB, delimiter 는 서로 연관성이 짙음
+
+근데 만약에 이 코드들 말고도 다양한 메소드, 변수들이 있고 위 코드과 연관성이 없다면?
+
+그때부터는 저런 방식도 복잡해질꺼임
+
+그래서 이번에 CLASS 를 써보도록 하자
