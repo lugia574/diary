@@ -11,10 +11,10 @@ public class OrhersOOP {
         System.out.println(Math.floor(1.8)); 
         System.out.println(Math.ceil(1.8)); 
 
-        // FileWriter f1 = new FileWriter("data.txt");
-        // f1.write("Hello");
+        FileWriter f1 = new FileWriter("data.txt");
+        f1.write("Hello");
         // f1.write(" java");
-        // f1.close();
+        f1.close();
 
         // FileWriter f2 = new FileWriter("data2.txt");
         // f2.write("Hello");
