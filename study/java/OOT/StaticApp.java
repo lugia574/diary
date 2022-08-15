@@ -1,4 +1,4 @@
-package study.java;
+package study.java.OOT;
 class Foo {
     public static String ClassVar = "I ClassVar";
     public String InstanceVar = "I InstanceVar";
@@ -32,7 +32,7 @@ public class StaticApp {
         
         f1.InstanceVar = "changed by f1";
         System.out.println(f1.InstanceVar); // changed by f1
-        System.out.println(f2.InstanceVar); // I InstanceVar
+        System.out.println(f2.InstanceVar); // I I
 
 
     }

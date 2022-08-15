@@ -1,4 +1,4 @@
-package study.java;
+package study.java.OOT;
 
 public class test{
 

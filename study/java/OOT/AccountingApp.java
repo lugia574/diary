@@ -1,4 +1,4 @@
-package study.java;
+package study.java.OOT;
 
 class App{
     // 공급가액
