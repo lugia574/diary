@@ -2,17 +2,24 @@ package study.java;
 
 public class MyOOP {
     public static void main(String[] args) {
-        Print.delimiter = "----";
-        Print.A();
-        Print.A();
-        Print.B();
-        Print.B();
+        Print p1 = new Print();
+        Print p2 = new Print();
+
+        p1.delimiter = "----";
+        p2.delimiter = "####";
+
+
+
+        p1.A();
+        p1.A();
+        p1.B();
+        p1.B();
         
-        Print.delimiter = "####";
-        Print.A();
-        Print.A();
-        Print.B();
-        Print.B();
+        System.out.println("----구분선----");
+        p2.A();
+        p2.A();
+        p2.B();
+        p2.B();
         
     }
 
