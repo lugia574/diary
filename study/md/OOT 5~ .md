@@ -305,3 +305,135 @@ class Print{
 this 하면 해당 인스턴스의 delimiter를 가리키는 거니까
 
 마찬가지로 메소드 A,B 의 print(delimiter) 역시 this 를 갈이키는게 올바른 표현이라 할 수 있음
+
+## 8 활용
+
+이제 좀 실용적인 사례에 적용해보면서 복습 ㄱㄱ
+
+```java
+public class AccountingApp {
+    // 공급가액
+    public static double valueOfSupply;
+    // 부가가치세율
+    public static double vatRate = 0.1;
+
+    public static double getVAT() {
+        return valueOfSupply * vatRate;
+    }
+
+    public static double getTotal() {
+        return valueOfSupply + getVAT();
+    }
+
+    public static void main(String[] args) {
+        valueOfSupply = 10000.0;
+        System.out.println("Value of supply : " + valueOfSupply);
+        System.out.println("VAT : " + getVAT());
+        System.out.println("Total : " + getTotal());
+
+    }
+
+}
+```
+
+### 8.1 클래스화
+
+```java
+package study.java;
+
+class App{
+    // 공급가액
+    public static double valueOfSupply;
+    // 부가가치세율
+    public static double vatRate = 0.1;
+
+    public static double getVAT() {
+        return valueOfSupply * vatRate;
+    }
+
+    public static double getTotal() {
+        return valueOfSupply + getVAT();
+    }
+
+}
+
+public class AccountingApp {
+    public static void main(String[] args) {
+        App.valueOfSupply = 10000.0;
+
+        System.out.println("Value of supply : " + App.valueOfSupply);
+        System.out.println("VAT : " + App.getVAT());
+        System.out.println("Total : " + App.getTotal());
+
+    }
+
+}
+```
+
+### 8.2 인스턴스화
+
+```java
+package study.java;
+
+class App{
+    // 공급가액
+    public double valueOfSupply;
+    // 부가가치세율
+    public static double vatRate = 0.1;
+
+    public App(double valueOfSupply){
+        this.valueOfSupply =valueOfSupply;
+    }
+
+    public double getVAT() {
+        return this.valueOfSupply * vatRate;
+    }
+
+    public double getTotal() {
+        return this.valueOfSupply + getVAT();
+    }
+
+}
+
+public class AccountingApp {
+    public static void main(String[] args) {
+        App app1 = new App(10000.0);
+        App app2 = new App(20000.0);
+
+        System.out.println("Value of supply app1 : " + app1.valueOfSupply);
+        System.out.println("Value of supply app2 : " + app2.valueOfSupply);
+
+        System.out.println("VAT app1 : " + app1.getVAT());
+        System.out.println("VAT app2 : " + app2.getVAT());
+
+        System.out.println("Total app1 : " + app1.getTotal());
+        System.out.println("Total app2 : " + app2.getTotal());
+        System.out.println("Total app1+app2 : "+ app1.getTotal() + app2.getTotal());
+
+
+    }
+
+}
+```
+
+부가세는 기본적으로 모두 동일하니까 그냥 클래스 소속인 static 을 부여하는게 나음
+
+vatRate 를 static 으로 하면 좋은점
+
+그럼 나중에 부가세가 바뀌면 값만 바꿔줘도 다른 인스턴스에 다 적용되서 유지보수성에 유용함
+
+또한 인스턴스들은 vatRate를 새로 만들지 않고 클래스에서 참조를 할꺼니 데이터 절약면에서도 유용함
+
+## 9 마무리
+
+끼요요옷~~~
+
+그담에 배워야할꺼는
+
+- 상속
+
+- 인터페이스
+
+- 패키지
+
+끼요오오옷
