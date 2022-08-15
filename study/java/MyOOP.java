@@ -2,12 +2,8 @@ package study.java;
 
 public class MyOOP {
     public static void main(String[] args) {
-        Print p1 = new Print();
-        Print p2 = new Print();
-
-        p1.delimiter = "----";
-        p2.delimiter = "####";
-
+        Print p1 = new Print("----");
+        Print p2 = new Print("####");
 
 
         p1.A();

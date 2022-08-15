@@ -190,3 +190,118 @@ static 안 준것은 인스턴스 하면 각각 값을 가지고 있기에
 [출처는 생활코딩](https://www.youtube.com/watch?v=hvTuZshZvIo&list=PLuHgQVnccGMAb-e41kXPSIpmoz1RvHyN4&index=7)
 
 이렇게 된다
+
+    static 은 class 소속이고
+
+    없는 것은 instance 소속이다
+
+## 7. 생성자(Constructor)와 this
+
+- 생성자
+
+  초기에 주입할 필요가 있는 값을 전달하거나 초기에 작업을 수행하도록 할때 쓴다
+
+가령
+
+```java
+FileWriter f1 = new FileWriter("data.txt");
+```
+
+이전에 썼던 FileWriter 를 new로 인스턴스 할때 썼던 `data.txt` 가 생성자를 해서 쓸 수 있는 거다
+
+생성자를 쓰는 이유는
+
+```java
+Print p1 = new Print();
+Print p2 = new Print();
+
+p1.delimiter = "----";
+p2.delimiter = "####";
+
+
+
+p1.A();
+p2.A();
+```
+
+이것을 보면 인스턴스를 생성하고
+
+그리고 나서 delimiter 를 박아준다
+
+만약 내가 깜박해서 delimiter 를 안 박는다면?
+
+누가 내가 만든 Print 클래스 가져와 인스턴스해서 쓸려고 하는데
+
+delimiter를 박아줘야하는 걸 몰라서 그냥 인스턴스만 해서 쓴다면?
+
+문제가 생길 수 있다
+
+그러니까 생성할때 같이 값을 넣게 하는거다
+
+그럼 이제 생성자를 만들어보자
+
+클래스명과 똑같은 이름의 메소드를 정의하면 걔가 생성자임
+
+```java
+class Print{
+    public String delimiter;
+    public Print(String str) {
+        delimiter= str;
+    }
+    //... 생략
+}
+```
+
+이럼 됨
+
+생성자는 static 이러던가 return 데이터 타입 같은거 지정 안해도 됨
+
+만약에 생성자 매개변수가 str이 아니라 delimiter면 어떻게 될까?
+
+```java
+    public String delimiter;
+    public Print(String delimiter) {
+        delimiter= delimiter
+    }
+```
+
+이럼 개판이 되는거임
+
+백날 인스턴스할때 delimiter에 string 값을 박아도 delimiter에 안 들어감
+
+이처럼
+
+겹치거나 해서 문제가 생기지 않게 하기 위해 `this`를 씀
+
+- this
+
+  클래스가 인스턴스화 되었을때의 인스턴스를 가리키는 특수한 기능
+
+```java
+package study.java;
+
+class Print{
+    public String delimiter;
+    public Print(String delimiter) {
+        this.delimiter= delimiter;
+    }
+    public  void A() {
+        System.out.println(this.delimiter);
+        System.out.println("A");
+        System.out.println("A");
+    }
+    public  void B() {
+        System.out.println(this.delimiter);
+        System.out.println("B");
+        System.out.println("B");
+
+    }
+
+}
+```
+
+이렇게 쓸 수 있음
+
+this 하면 해당 인스턴스의 delimiter를 가리키는 거니까
+
+마찬가지로 메소드 A,B 의 print(delimiter) 역시 this 를 갈이키는게 올바른 표현이라 할 수 있음
