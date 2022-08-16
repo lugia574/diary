@@ -1,5 +1,7 @@
 # Inheritance
 
+[출처는 생활코딩](https://www.youtube.com/playlist?list=PLuHgQVnccGMA1bRSk_SZrXMngx5iq03cc)
+
 ## 1. 수업소개
 
 자바에서 객체를 상속하는 방법을 배워 볼꺼임
@@ -50,17 +52,6 @@ class Cal {
 class CalInheritance extends Cal{
 
 }
-
-public class InheritanceAPP {
-    public static void main(String[] args) {
-        Cal cal1 = new Cal();
-        CalInheritance cal2 = new CalInheritance();
-
-        System.out.println(cal1.sum(1, 2));
-        System.out.println(cal2.sum(1, 2));
-    }
-}
-
 ```
 
 그럼 이런식으로 됨

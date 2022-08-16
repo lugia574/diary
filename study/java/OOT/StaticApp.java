@@ -23,12 +23,12 @@ public class StaticApp {
         Foo f1 =new Foo();
         Foo f2 =new Foo();
 
-        System.out.println(f1.ClassVar); // I ClassVar
+        //System.out.println(f1.ClassVar); // I ClassVar
         System.out.println(f1.InstanceVar); // I InstanceVar
 
-        f1.ClassVar = "changed by f1";
-        System.out.println(Foo.ClassVar); // changed by f1
-        System.out.println(f2.ClassVar); // changed by f1
+        // f1.ClassVar = "changed by f1";
+        // System.out.println(Foo.ClassVar); // changed by f1
+        // System.out.println(f2.ClassVar); // changed by f1
         
         f1.InstanceVar = "changed by f1";
         System.out.println(f1.InstanceVar); // changed by f1
