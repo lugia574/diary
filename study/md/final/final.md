@@ -1,5 +1,7 @@
 # final
 
+[출처는 생활코딩](https://opentutorials.org/course/1223/6145)
+
 추상이 상속을 강제하는 것이라면 final은 상속/변경을 금지하는 규제
 
 상속 하지마 마라
