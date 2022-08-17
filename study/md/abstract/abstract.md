@@ -162,7 +162,7 @@ class CalculatorDecoPlus extends Calculator {
 
 사용자에 역량에 따라 그 메소드의 성능, 구조 등이 천차만별이 될텐데
 
-이게 과연 맞는건가 싶음
+그 퍼포먼스 차이가 심해지면 과연 맞는건가 싶음
 
 그런 복잡한건 추상화 안 할려나?
 
