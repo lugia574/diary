@@ -1,39 +1,20 @@
 package study.java;
 
-abstract class  test {
-    int left;
-    int right;
-
-    public void setOprands(int left, int right){
-        this.left = left;
-        this.right = right;
-    } 
-
-    public abstract void sum();  
-    public abstract void avg();
-    public void run(){
-        sum();
-        avg();
-    }
-
+class A{
+    public String x(){return "A.x";}
 }
-
+class B extends A{
+    public String x(){return "B.x";}
+    public String y(){return "y";}
+}
+class B2 extends A{
+    public String x(){return "B2.x";}
+}
 public class practice {
     public static void main(String[] args) {
-        
+        B obj = new B();
+        B2 obj2 = new B2();
+        System.out.println(obj.x());
+        System.out.println(obj2.x() );
     }
 }
-
-
-// class A{
-//     final void b(){}
-// }
-// class B extends A{
-//     void b(){}  
-// }
-
-
-// final class C{
-//     final void b(){}
-// }
-// class D extends C{}
