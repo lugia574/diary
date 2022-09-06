@@ -231,4 +231,4 @@ function a 에서 function b를 실행한거지만 function b 가 선언된 시�
 
 extra 파트의 var, let, const 를 찾아보자
 
-[extra 2. var, let, const](/#)
+[extra 2. var, let, const](https://github.com/lugia574/diary/blob/main/study/JavaScript/md/4.%20extra%20part/extra%202.%20var%2C%20let%2C%20const%20.md)

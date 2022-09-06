@@ -1,4 +1,4 @@
-package study.java.OOT;
+package study.Java.code.OOT;
 class Foo {
     public static String ClassVar = "I ClassVar";
     public String InstanceVar = "I InstanceVar";

@@ -1,4 +1,4 @@
-package study.java.OOT;
+package study.Java.code.OOT;
 
 class Print{
     public String delimiter;

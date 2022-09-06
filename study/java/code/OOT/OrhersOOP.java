@@ -1,4 +1,4 @@
-package study.java.OOT;
+package study.Java.code.OOT;
 
 import java.io.FileWriter;
 import java.io.IOException;

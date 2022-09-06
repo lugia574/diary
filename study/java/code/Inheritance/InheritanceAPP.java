@@ -1,4 +1,4 @@
-package study.java.Inheritance;
+package study.Java.code.Inheritance;
 
 class Cal {
     int v1,v2;

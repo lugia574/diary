@@ -1,4 +1,4 @@
-package study.java.AccessModifier;
+package study.Java.code.AccessModifier;
 
 
 
