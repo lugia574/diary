@@ -224,3 +224,11 @@ a();
 실행결과는 5 임
 
 function a 에서 function b를 실행한거지만 function b 가 선언된 시점인 전역변수 i 를 찾아가게 됨
+
+---
+
+해당 유효 범위에 대한 좀 더 자세한 이야기는
+
+extra 파트의 var, let, const 를 찾아보자
+
+[extra 2. var, let, const](/#)
