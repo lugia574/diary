@@ -192,3 +192,23 @@ http://api.jquery.com/
 이렇게 길어진다
 
 jQuery는 존나 간편하다
+
+---
+
+1. 자바스크립트 API 문서
+
+[ECMAScript (표준문서)](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
+
+[자바스크립트 사전 (생활코딩)](http://opentutorials.org/course/50)
+
+[자바스크립트 레퍼런스 (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
+
+[jscript 레퍼런스 (MSDN)](<http://msdn.microsoft.com/ko-kr/library/vstudio/z688wt03(v=vs.100).aspx>)
+
+2. 호스트 환경의 API 문서
+
+[웹브라우저 API](https://developer.mozilla.org/en-US/docs/Web/API)
+
+[Node.js API](http://nodejs.org/api/)
+
+[Google Apps Script API](https://developers.google.com/apps-script/)
