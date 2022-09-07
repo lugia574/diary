@@ -18,3 +18,15 @@ function sortNumber(a, b) {
 }
 var numbers = [20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 alert(numbers.sort(sortNumber)); // array, [20,10,9,8,7,6,5,4,3,2,1]
+
+var arrClosure = [];
+for (var i = 0; i < 5; i++) {
+  arrClosure[i] = (function (id) {
+    return function () {
+      return id;
+    };
+  })(i);
+}
+for (var index in arrClosure) {
+  console.log(arrClosure[index]());
+}

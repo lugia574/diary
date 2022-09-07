@@ -91,6 +91,22 @@ for 문으로 process를 돌리니
 
     어떠한 함수가 수신하는 인자가 함수인 경우
 
+    그니까 함수에 파라미터로 들어가는 함수
+
+용도는 순차적으로 실행하고 싶을때 씀
+
+대표적으로 eventListener, setTimeout
+
+```js
+addEventListener("click", function () {
+  // 클릭을 누르면 이 func 을 실행해주세연
+});
+
+setTimeout(function () {
+  // 1000s/m 가 지나면 이 func 을 실행해 주세연~
+}, 1000);
+```
+
 ```js
 var numbers = [20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 console.log(numbers.sort()); // [1, 10, 2, 20, 3, 4, 5, 6, 7, 8, 9]
@@ -142,3 +158,55 @@ alert(numbers.sort(sortNumber)); // array, [1,2,3,4,5,6,7,8,9,10,20]
 시간이 오래걸리는 작업이 있을 때 이 작업이 완료된 후에 처리해야 할 일을 콜백으로 지정하면 해당 작업이 끝났을 때 미리 등록한 작업을 실행하도록 할 수 있다.
 
 다음 코드는 일반적인 환경에서는 작동하지 않고 서버 환경에서만 동작한다.
+
+---
+
+### 5. 심화
+
+콜백함수를 한번 만들어보자
+
+존나 쉬움
+
+```js
+function first(파라미터) {
+  console.log(1);
+  파라미터();
+}
+
+function second() {
+  console.log(2);
+}
+
+first(second);
+```
+
+이럼 됨
+
+콜백함수의 단점은
+
+길어지면 존나 난해해짐
+
+가령 DB에서 값을 가져올때
+
+```js
+db.collection("post"),
+  findOne(A, function () {
+    db.collection("post"),
+      findOne(B, function () {
+        db.collection("post"),
+          findOne(C, function () {
+            // ~~
+          });
+      });
+  });
+```
+
+이같이 DB에서 A를 뽑고 B를 뽑고~ C를 뽑고~
+
+존나 보기 싶음
+
+이렇게 하지말고 걍 하나씩 하던가
+
+`promise(then)` 을 이용하는 방법도 있음
+
+아님 `async, await` 를 써도 되고
