@@ -93,11 +93,11 @@ console.log("o2 실행", sum(o2));
 
 ---
 
-[call, apply, bind](https://www.youtube.com/watch?v=KfuyXQLFNW4)
-
-call, apply, bind
+## call, apply, bind
 
     함수 호출 방식과 관계없이 this를 지정할 수 있음
+
+[출처: 자바스크립트 중급 강좌 #13 call, apply, bind](https://www.youtube.com/watch?v=KfuyXQLFNW4)
 
 ### call
 
