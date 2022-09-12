@@ -13,15 +13,3 @@ let test = "test2";
 }
 
 console.log("밖에꺼" + test);
-
-function ConstructorTest(num, num2) {
-  // this = {}
-  this.result = num + num2;
-  this.answer = function () {
-    return this.result;
-  };
-  // return this
-}
-
-let sumTest = ConstructorTest(65, 55);
-console.log(sumTest);

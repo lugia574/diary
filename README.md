@@ -8,4 +8,14 @@ diary
 
 ## [Java](https://github.com/lugia574/diary/tree/main/study/java/md)
 
+### 참고자료
+
+- [생활코딩](https://opentutorials.org/course/1223)
+
+- [tcpschool](https://www.tcpschool.com/java/intro)
+
 ## [JavaScript](https://github.com/lugia574/diary/tree/main/study/JavaScript/md)
+
+### 참고자료
+
+- [생활코딩](https://opentutorials.org/course/743)
