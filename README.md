@@ -19,3 +19,7 @@ diary
 ### 참고자료
 
 - [생활코딩](https://opentutorials.org/course/743)
+
+- [생활코딩: 객체 지향 프로그래밍](https://opentutorials.org/module/4047)
+
+- [코딩악마 중급과정](https://www.youtube.com/watch?v=ocGc-AmWSnQ&list=PLZKTXPmaJk8JZ2NAC538UzhY_UNqMdZB4)

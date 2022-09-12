@@ -1,0 +1,208 @@
+# Variable
+
+## var, let, const
+
+보통 `let`과 `const` 를 씀
+
+이들은 ES6 에 생긴 것들임
+
+이전에는 `var`를 썻음
+
+이들의 차이점을 알아보자
+
+`var`와 `let`은 크게 다르지 않지만 엄밀히 다름
+
+1. `var` 은 한번 선언된 변수를 다시 선언할 수 있음
+
+```js
+var name = "Mike";
+
+console.log(name); // Mike
+
+var name = "Micky";
+
+console.log(name); // Micky
+```
+
+같은 상황에서 `let`은 에러가 생김
+
+```js
+let name = "Mike";
+
+console.log(name); // Mike
+
+let name = "Micky"; // ERROR
+
+console.log(name);
+```
+
+2. var 는 선언하기 전에 사용할 수 있음
+
+```js
+console.log(name); // undefined
+
+var name = "Mike";
+```
+
+console.log는 에러를 일으키지 않고 undefined를 나타냄
+
+undefined는 값이 할당되지 않았는다는 거임
+
+`var`로 선언된 모든 변수는 최상위로 끌려올려진것 처럼 작동을 함
+
+```js
+var name;
+console.log(name);
+
+name = "Mike";
+```
+
+이를 `호이스팅(hoisting)` 이라고 부름
+
+선언만 끌어올려질뿐 값 할당이 되지 않으니까 undefined가 뜨는거임
+
+같은 상황에서 `let`은 에러가 뜸
+
+```js
+console.log(name); // ERROR ReferenceError
+
+let name = "Mike";
+```
+
+그럼 `let`은 호이스팅 되지 않는걸까?
+
+놉
+
+`let`도 호이스팅 됨 `const` 역시 호이스팅 됨
+
+## 호이스팅과 TDZ
+
+정확한 호이스팅 뜻은
+
+    스코프 내부 어디서든 변수 선언은 최상위에 선언된것처럼 행동
+
+그럼 let 이 에러를 뿜는 이유는 뭘까?
+
+그 이유는 `Temporal Dead Zone` 줄여서 `TDZ` 때문임
+
+```js
+// TDZ 영역
+console.log(name);
+// TDZ 영역 끝
+const name = "Mike"; // 함수 선언 및 할당
+
+console.log(name); // 사용 가능
+```
+
+`let`과 `const` 는 `TDZ`의 영향을 받음
+
+할당을 하기 전에는 사용 할 수 없음
+
+이는 코드를 예측가능하게 하고 잠재적인 버그를 줄일 수 있음
+
+이를 적용하면
+
+```js
+let age = 30;
+
+function showAge() {
+  // TDZ 영역
+  console.log(age); // ERROR ReferenceError
+  // TDZ 영역 끝
+
+  let age = 20;
+}
+
+showAge();
+```
+
+여기서 console 은 let이 호이스팅 되지 않아서 에러를 내는게 아니라
+
+`scope` 단위로 이루어진 `TDZ` 때문인거임
+
+## 변수 생성 과정
+
+변수는 3단계 생성과정을 거침
+
+1. 선언 단계
+
+2. 초기화 단계
+
+3. 할당 단계
+
+`var` 는 선언과 초기화가 같이 됨
+
+1. 선언 및 초기화 단계
+
+   초기화: undefined를 할당해주는 단계
+
+2. 할당 단계
+
+`let`은 선언, 초기화가 분리되어 있음
+
+초기화는 실제 코드에 도달했을 때 되기 때문 레퍼런스 에러가 발동하는거임
+
+`const`는 선언, 초기화, 할당이 동시에 됨
+
+그렇기에
+
+```js
+let name;
+name = 'Mike';
+
+var age;
+age = 30;
+
+const gender; // ERROR SyntaxError
+gender = 'male';
+```
+
+## scope
+
+- let, const
+
+  블럭 스코프(block-scoped)
+
+  코드블럭 내에서 선언된 변수는 코드 블럭 내에서만 유효하며, 외부에서는 접근 할 수 없다는 뜻
+
+  즉 코드블록 내부에서 선언된 변수는 지역변수인거임
+
+  코드블록은 함수, if, for, while, try/catch 문 등이 있음
+
+- var
+
+  함수 스코프(function-scoped)
+
+  함수 내에 선언된 변수만 그 지역변수가 되는거임
+
+  예를 들어 if 에 선언된 var 은 외부에서도 부를 수 있음
+
+  ```js
+  const age = 20;
+  if (age > 19) {
+    var txt = "성인";
+    let txt2 = "상인";
+    const txt3 = "색인";
+  }
+  console.log(txt); // '성인'
+  console.log(txt2); // ReferenceError
+  console.log(txt3); // ReferenceError
+  ```
+
+  함수 안에서 선언되면 var 역시 외부에서 찾을 수 없음
+
+  ```js
+  function add(num1, num2) {
+    var result = num1 + num2;
+  }
+
+  add(2, 3);
+
+  console.log(result); // ReferenceError
+  ```
+
+더 자세한 내용은
+
+[extra 2. var, let, const](https://github.com/lugia574/diary/blob/main/study/JavaScript/md/4.%20extra%20part/extra%202.%20var%2C%20let%2C%20const%20.md)
+
+여기서 볼 수 있다.

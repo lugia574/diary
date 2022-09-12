@@ -6,7 +6,7 @@
 
 객체를 상속하기 위해 사용하는데
 
-원래 js 는 java 와 달리 클래스 라는 개념이 없다. (ES6 이후에 생김)
+원래 js 는 java 와 달리 클래스 라는 개념이 없었다. (ES6 이후에 생김)
 
 그래서 기존 객체를 복사하여 새로운 객체를 생성하는데
 
@@ -36,7 +36,9 @@ Sub에 적히지 않은 ultrarProp 값을 출력할 수 있었던거다.
 
 이게 가능했던 이유는 prototype을 사용하였기에 그렇다
 
-그럼 의문이 생긴다
+<details>
+<summary>그럼 의문이 생긴다</summary>
+<div markdown="1">
 
 굳이 prototype을 쓰지 않고 this를 써서 상속을 하면 안되는가?
 
@@ -73,3 +75,6 @@ this 는 분명히 객체지만 함수형태는 아니다
 그렇지 아닐까?
 
 자바 같은 경우는 걍 클래스라서 그런지 extend 갈기면 잘만 되더만 [링크](https://github.com/lugia574/diary/blob/main/study/java/code/practice.java)
+
+</div>
+</details>
