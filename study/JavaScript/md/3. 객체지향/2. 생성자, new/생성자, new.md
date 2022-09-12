@@ -44,7 +44,7 @@ var person = {
 
 ## 3. 생성자, new
 
-생성자(constructor)는 객체를 만드는 역할을 하는 함수다.
+생성자(constructor)는 객체를 만드는 역할을 하는 함수(객체)다.
 
 함수를 호출할 때 new을 붙이면 새로운 객체를 만든 후에 이를 리턴한다.
 
@@ -66,9 +66,50 @@ document.write(p2.introduce());
 
 이러한 작업을 초기화라고 한다.
 
-이를 통해서 코드의 재사용성이 대폭 높아졌다.
+이를 통해서 코드의 재사용성이 대폭 높아진다.
 
-코드를 통해서 알 수 있듯이 생성자 함수는 일반함수와 구분하기 위해서 첫글자를 대문자로 표시한다.
+보면 알 수 있듯이 일반 함수(객체)랑 차이가 없다.
+
+ㄹㅇ루 그냥 함수에 new 박아서 사용해도 오류없이 잘만 돌아간다.
+
+그래서 생성자 함수는 일반함수와 구분하기 위해서 첫글자를 **대문자**로 표시한다.
+
+```js
+function sumTest(num, num2) {
+  return num + num2;
+}
+
+let kim = new sumTest(65, 55);
+console.log(kim);
+```
+
+### 심화
+
+근데 위 코드의 값은
+
+```
+sumTest {}
+```
+
+로 텅 비어 있는데
+
+이는 new 로 생성자 객체를 만들면 빈 this 객체를 만들고 그걸 반환하기 때문임
+
+그렇기에 생성자 코드를 제대로 이용하려면 this 를 써야함
+
+```js
+function ConstructorTest(num, num2) {
+  // this = {}
+  this.result = num + num2;
+  this.answer = function () {
+    return this.result;
+  };
+  // return this
+}
+
+let sumTest = new ConstructorTest(65, 55);
+console.log(sumTest.answer());
+```
 
 ### 자바스크립트 생성자의 특징
 
