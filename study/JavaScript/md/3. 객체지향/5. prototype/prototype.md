@@ -108,7 +108,27 @@ lee 같은 경우 sum이 정의되지 않았으니까 `Person`의 `prototype` �
 
 ## prototype chain
 
-이것의 대표적인 예는 우리가 배열, 객체 등을 사용할때 볼 수 있음
+```js
+function Ultra() {}
+Ultra.prototype.ultraProp = true;
+
+function Super() {}
+Super.prototype = new Ultra();
+
+function Sub() {}
+Sub.prototype = new Super();
+
+var o = new Sub();
+console.log(o.ultraProp);
+```
+
+보면 o 는 ultraProp 가 없는데
+
+Sub의 prototype에 Super 생성자의 객체를 담고 그 Super 객체의 prototype은 Ultra 생성자의 객체를 담고
+
+그 Ultra 객체의 prototype에 ultraProp 값이 true 이니까 해당 값을 출력하게 된거임
+
+대표적인 예는 우리가 배열, 객체 등을 사용할때 볼 수 있음
 
 ```js
 let arr = [2, 1, 6];
