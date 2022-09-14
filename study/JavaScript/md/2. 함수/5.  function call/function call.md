@@ -93,6 +93,10 @@ console.log("o2 실행", sum(o2));
 
 ---
 
+개같아서 코딩애플 찾아서 보고
+
+[js 객체지향 프로그래밍 객체와 함수](https://opentutorials.org/module/4047/24628) 에서 찾아봄
+
 ## call, apply, bind
 
     함수 호출 방식과 관계없이 this를 지정할 수 있음
@@ -135,6 +139,19 @@ console.log(mike); // {name: 'Mike', birthYear: 2022, occupation: '아기'}
 ```
 
 이렇게 됨
+
+```js
+var kim = { name: "kim", first: 10, second: 20 };
+var lee = { name: "lee", first: 10, second: 10 };
+function sum(prefix) {
+  return prefix + (this.first + this.second);
+}
+// sum();
+console.log("sum.call(kim)", sum.call(kim, "=> "));
+console.log("lee.call(kim)", sum.call(lee, ": "));
+```
+
+이렇게도 가능
 
 ### apply
 
@@ -192,6 +209,21 @@ updateMike(1980, "똥쟁이");
 
 console.log(mike); // {name: 'Mike', birthYear: 1980, occupation: '똥쟁이'}
 ```
+
+```js
+var kim = { name: "kim", first: 10, second: 20 };
+var lee = { name: "lee", first: 10, second: 10 };
+function sum(prefix) {
+  return prefix + (this.first + this.second);
+}
+// sum();
+console.log("sum.call(kim)", sum.call(kim, "=> ")); //apply
+console.log("lee.call(kim)", sum.call(lee, ": "));
+var kimSum = sum.bind(kim, "-> ");
+console.log("kimSum()", kimSum());
+```
+
+이렇게도 가능함
 
 ### 예제
 
