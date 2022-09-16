@@ -36,6 +36,14 @@ prototype에 속해있지 않고 메서드로서 존재합니다.
 
 즉 prototype에 속해있지 않은 keys의 경우 해당 메서드가 다른 객체의 prototype에 할당되지 않아 arr.keys(arr)로 호출이 불가능한 것입니다.
 
+그렇기에 keys() 는
+
+```js
+Object.keys();
+```
+
+이렇게 써야한다~
+
 ## 3. Object 확장
 
 또한 Object 객체를 확장하면 모든 객체가 접근할 수 있는 API를 만들 수 있다. 아래는 Object 객체를 확장한 사례다.
