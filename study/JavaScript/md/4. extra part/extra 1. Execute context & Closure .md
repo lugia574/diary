@@ -1,7 +1,5 @@
 # Execute context & Closuer
 
-## 1. Execute context
-
 자바스크립트의 코드가 실행되는 원리인 execute context에 대한 수업입니다.
 
 이 수업을 들으면
@@ -14,6 +12,10 @@
 [JavaScript - Execute context](https://www.youtube.com/watch?v=QtOF0uMBy7k)
 
 [자바스크립트 - 스코프 체인(scope chain)란?](https://ljtaek2.tistory.com/140)
+
+[JavaScript - closure](https://www.youtube.com/watch?v=bwwaSwf7vkE&t=8s)
+
+## 1. Execute context
 
 ---
 
@@ -180,7 +182,7 @@ function fn1() {
 fn1();
 ```
 
-이렇게 하면 상위 함수에 선언된 변수들 모두 가져올 수 있다.
+이렇게 하면 상위 함수에 선언된 변수들 모두 가져올 수 있다. (동적 스코프)
 
 Scope 역시 Closure 라는 범위로 각각의 Closure가 만들어지며 계속 쌓이는 걸 알 수 있다.
 
