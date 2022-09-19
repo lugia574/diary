@@ -1,4 +1,4 @@
-package study.Java.code;
+package study.Java.code.b;
 
 class A{
     public String x(){return "A.x";}

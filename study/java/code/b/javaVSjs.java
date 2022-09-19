@@ -1,8 +1,4 @@
-package study.Java.code;
-
-
-
-import java.util.function.Function;
+package study.Java.code.b;
 
 public class javaVSjs {
     public static void 먼데() {
