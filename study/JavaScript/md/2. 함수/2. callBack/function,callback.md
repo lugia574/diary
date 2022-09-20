@@ -232,7 +232,7 @@ alert(numbers.sort(sortNumber)); // array, [1,2,3,4,5,6,7,8,9,10,20]
 
 ---
 
-### 5. 심화
+## 5. 심화
 
 콜백함수의 단점은
 
@@ -263,4 +263,4 @@ db.collection("post"),
 
 아님 `async, await` 를 써도 되고
 
-자세한 내용은 [여기서 보도록 하자](https://opentutorials.org/course/50/109)
+자세한 내용은 [여기서 보도록 하자](https://github.com/lugia574/diary/blob/main/study/JavaScript/md/4.%20extra%20part/extra%203.%20JavaScript%20Promise.md#2-promise)
