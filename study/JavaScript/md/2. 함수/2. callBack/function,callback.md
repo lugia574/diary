@@ -187,13 +187,11 @@ var numbers = [20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 console.log(numbers.sort()); // [1, 10, 2, 20, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-해당 배열을 sort 한다고 치자
+해당 배열을 [sort](https://opentutorials.org/course/50/109) 한다고 치자
 
 그럼 희한하게 정렬이 된다
 
 이유는 암시적으로 원소를 문자로 형변환 하기 때문에 10이 1뒤에 온다.
-
-https://opentutorials.org/course/50/109
 
 그니까 1 나오고 1있는 10 나오고 그담에 2 나오고 2 있는 20 나오고 이러거라는 뜻
 
@@ -236,25 +234,6 @@ alert(numbers.sort(sortNumber)); // array, [1,2,3,4,5,6,7,8,9,10,20]
 
 ### 5. 심화
 
-콜백함수를 한번 만들어보자
-
-존나 쉬움
-
-```js
-function first(파라미터) {
-  console.log(1);
-  파라미터();
-}
-
-function second() {
-  console.log(2);
-}
-
-first(second);
-```
-
-이럼 됨
-
 콜백함수의 단점은
 
 길어지면 존나 난해해짐
@@ -283,3 +262,5 @@ db.collection("post"),
 `promise(then)` 을 이용하는 방법도 있음
 
 아님 `async, await` 를 써도 되고
+
+자세한 내용은 [여기서 보도록 하자](https://opentutorials.org/course/50/109)
