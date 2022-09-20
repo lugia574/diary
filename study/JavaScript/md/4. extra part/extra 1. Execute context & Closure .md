@@ -15,6 +15,8 @@
 
 [JavaScript - closure](https://www.youtube.com/watch?v=bwwaSwf7vkE&t=8s)
 
+[Scope(스코프)와 Closure(클로저) 정리](https://velog.io/@nittre/JavaScript-Scope%EC%8A%A4%EC%BD%94%ED%94%84%EC%99%80-Closure%ED%81%B4%EB%A1%9C%EC%A0%80-%EC%A0%95%EB%A6%AC)
+
 ## 1. Execute context
 
 ---
