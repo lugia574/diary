@@ -28,6 +28,8 @@ diary
 
 - [생활코딩 extra](https://seomal.com/map/1/184)
 
+- [모던 자바스크립트 딥 다이브](https://poiemaweb.com/)
+
 ## 3. [Web Browser JavaScript](https://github.com/lugia574/diary/tree/main/study/Web%20Browser%20JavaScript)
 
 ### 참고자료

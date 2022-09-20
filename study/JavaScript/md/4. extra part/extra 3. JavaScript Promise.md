@@ -1,10 +1,12 @@
 # JavaScript Promise
 
-[출처 : JavaScript Promise (callback & async)](https://www.youtube.com/playlist?list=PLuHgQVnccGMBVQ4ZcIRmcOeu8uktUAbxI)
+[출처: JavaScript Promise (callback & async)](https://www.youtube.com/playlist?list=PLuHgQVnccGMBVQ4ZcIRmcOeu8uktUAbxI)
 
-[출처 : 자바스크립트 Promise 쉽게 이해하기](https://joshua1988.github.io/web-development/javascript/promise-for-beginners/)
+[출처: 자바스크립트 Promise 쉽게 이해하기](https://joshua1988.github.io/web-development/javascript/promise-for-beginners/)
 
-[출처 : MDN promise](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+[출처: MDN promise](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
+[출처: 모던 자바스크립트 딥다이브 priomise](https://poiemaweb.com/es6-promise)
 
 ## 1. callback function
 
@@ -68,9 +70,11 @@ getData(function (tableData) {
 });
 ```
 
-콜백 함수를 이용한 기본적인 방식은 이렇게 된다.
+콜백 함수를 이용한 기본적인 비동기 방식은 이렇게 된다.
 
 이 방식의 문제점은 길어지면 콜백지옥에 빠지게 된다는 것이다.
+
+이처럼 인해 가독성이 나쁘고 비동기 처리 중 발생한 에러의 처리가 곤란하며, 여러 개의 비동기 처리를 한번에 처리하는 데도 한계가 존재한다.
 
 `promise` 를 쓰게 되면 이렇게 된다.
 
@@ -96,9 +100,15 @@ getData()
   });
 ```
 
-여기서 then 은 말 그대로 그 담에 수행할 콜백 함수임
+여기서 `then` 은 말 그대로 그 담에 수행할 콜백 함수임
 
-그리고 catch는 만약 비동기 처리가 실패 됐을경우 수행할 콜백 함수임
+    then 메소드는 두 개의 콜백 함수를 인자로 전달 받는다. 첫 번째 콜백 함수는 성공(fulfilled, resolve 함수가 호출된 상태) 시 호출되고 두 번째 함수는 실패(rejected, reject 함수가 호출된 상태) 시 호출된다.
+
+    then 메소드는 Promise를 반환한다.
+
+그리고 `catch는` 만약 비동기 처리가 실패 됐을경우 수행할 콜백 함수임
+
+    예외(비동기 처리에서 발생한 에러와 then 메소드에서 발생한 에러)가 발생하면 호출된다. catch 메소드는 Promise를 반환한다.
 
 이렇게 then 과 catch 를 이용해서 비동기 처리를 하면 좀 더 직관적으로 코드를 작성 할 수 있음
 
@@ -120,14 +130,14 @@ getData()
   .then(function (data) {
     // ...
   })
+  .then(function () {
+    // ...
+  })
+  .then(function () {
+    // ...
+  })
   .catch(function (err) {
     // ... 에러 떳을때 수행할 코드
-  })
-  .then(function () {
-    // ...
-  })
-  .then(function () {
-    // ...
   })
   .finally(function () {
     // ... 결과랑 상관없이 수행
@@ -136,7 +146,7 @@ getData()
 
 ### Promise 심화
 
-만약 여러개의 promise 가 얽혀 있는 상태(`promise chaining`)가 있으면 어떻게 될까?
+여러개의 promise 가 얽혀 있는 코드(`promise chaining`)를 보자
 
 ```js
 const f1 = () => {
@@ -173,8 +183,6 @@ f1()
   .catch((res) => console.log(res))
   .finally(() => console.log("끝났습니다잉"));
 ```
-
-이렇다고 해보자
 
 이 코드의 수행시간은 1 + 3 + 2 해서 총 6초이다
 
