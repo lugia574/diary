@@ -93,9 +93,84 @@ for 문으로 process를 돌리니
 
     그니까 함수에 파라미터로 들어가는 함수
 
-용도는 순차적으로 실행하고 싶을때 씀
+js 는 재밋게도 함수를 객체에 담을 수 있음
 
-대표적으로 eventListener, setTimeout
+```js
+const fnc = function (num, num2) {
+  return num + num2;
+};
+
+console.log(fnc(3, 4));
+```
+
+이렇게 객체에 함수를 담을 수 있는 걸 이용해서
+
+함수를 담은 객체를 리턴으로 출력할 수 있음
+
+```js
+// 1
+function example() {
+  const fnc = function (num, num2) {
+    return num + num2;
+  };
+  return fnc;
+}
+
+const f1 = example();
+
+console.log(f1(3, 4));
+
+// 2
+const fnc2 = function () {
+  console.log("example");
+};
+function example2(fn) {
+  fn2();
+}
+
+example2(fnc2);
+```
+
+이처럼 용도는 순차적으로 실행하고 싶을때 씀
+
+[Array.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) 를 예로 들어보자
+
+filter() 는 주어진 함수의 테스트를 통과하는 모든 요소를 모아 새로운 배열로 반환합니다.
+
+    arr.filter(callback(element[, index[, array]])[, thisArg])
+
+여기서 `callback` 는
+
+각 요소를 시험할 함수. true를 반환하면 요소를 유지하고, false를 반환하면 버림.
+
+매개 변수 element(처리할 현재 요소)는 필수고 index, array 는 옵션
+
+이를 이용하면
+
+```js
+const words = [
+  "spray",
+  "limit",
+  "elite",
+  "exuberant",
+  "destruction",
+  "present",
+];
+
+const callbackFnc = function (element) {
+  if (element.length > 6) {
+    return true;
+  }
+};
+
+const result = words.filter(callbackFnc);
+const result2 = words.filter((word) => word.length > 6); // 짧게 하면 이렇게 가능함
+
+console.log(result);
+console.log(result2);
+```
+
+eventListener, setTimeout 함수도 콜백함수임
 
 ```js
 addEventListener("click", function () {
@@ -156,8 +231,6 @@ alert(numbers.sort(sortNumber)); // array, [1,2,3,4,5,6,7,8,9,10,20]
 콜백은 비동기처리에서도 유용하게 사용된다.
 
 시간이 오래걸리는 작업이 있을 때 이 작업이 완료된 후에 처리해야 할 일을 콜백으로 지정하면 해당 작업이 끝났을 때 미리 등록한 작업을 실행하도록 할 수 있다.
-
-다음 코드는 일반적인 환경에서는 작동하지 않고 서버 환경에서만 동작한다.
 
 ---
 
