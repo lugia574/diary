@@ -151,3 +151,11 @@ setTimeout - second
 그 다음에 promise 코드들 마지막에 setTimeout 코드가 실행됐다.
 
 Job Queue의 우선순위가 Callback Queue보다 높다.
+
+---
+
+- 나중에 읽어보자
+
+  - [[기술면접] JavaScript 런타임 작동방식, 비동기와 이벤트 루프](https://velog.io/@ahsy92/%EA%B8%B0%EC%88%A0%EB%A9%B4%EC%A0%91-JavaScript-%EB%9F%B0%ED%83%80%EC%9E%84-%EC%9E%91%EB%8F%99%EB%B0%A9%EC%8B%9D-%EB%B9%84%EB%8F%99%EA%B8%B0%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84)
+
+  - [[기술면접] 싱글스레드와 멀티스레드](https://velog.io/@ahsy92/%EA%B8%B0%EC%88%A0%EB%A9%B4%EC%A0%91-%EC%8B%B1%EA%B8%80%EC%8A%A4%EB%A0%88%EB%93%9C%EC%99%80-%EB%A9%80%ED%8B%B0%EC%8A%A4%EB%A0%88%EB%93%9C)
