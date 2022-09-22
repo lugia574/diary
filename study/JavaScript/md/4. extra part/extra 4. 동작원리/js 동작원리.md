@@ -1,10 +1,8 @@
 # JavaScript 동작원리
 
-[모던 자바스크립트 딥다이브: 브라우저 동작 원리](https://poiemaweb.com/js-browser)
+[출처: JavaScript 동작원리](https://www.youtube.com/watch?v=v67LloZ1ieI)
 
-[JavaScript 동작원리](https://www.youtube.com/watch?v=v67LloZ1ieI)
-
-[JavaScript 비동기 핵심 Event Loop 정리](https://medium.com/sjk5766/javascript-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%95%B5%EC%8B%AC-event-loop-%EC%A0%95%EB%A6%AC-422eb29231a8)
+[출처: JavaScript 비동기 핵심 Event Loop 정리](https://medium.com/sjk5766/javascript-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%95%B5%EC%8B%AC-event-loop-%EC%A0%95%EB%A6%AC-422eb29231a8)
 
 ## 1. 비동기 처리에 대한 고찰
 
@@ -102,7 +100,7 @@ setTimeout의 delay인자가 delay ms 후에 실행 되는 것을 보장하지 �
 
 정확히는 delay ms 후에 Callback Queue에 들어가는 것을 보장한다.
 
-## 3. ES6 Job Queue
+### 심화. ES6 Job Queue
 
 ES6/ES2015 에서 소개된 `Job Queue`는 Callback Queue와 다른 Queue이며
 
@@ -155,6 +153,10 @@ Job Queue의 우선순위가 Callback Queue보다 높다.
 ---
 
 - 나중에 읽어보자
+
+  - [모던 자바스크립트 딥다이브 브라우저 동작 원리](https://poiemaweb.com/js-browser)
+
+  - [브라우저는 어떻게 동작하는가?](https://d2.naver.com/helloworld/59361)
 
   - [[기술면접] JavaScript 런타임 작동방식, 비동기와 이벤트 루프](https://velog.io/@ahsy92/%EA%B8%B0%EC%88%A0%EB%A9%B4%EC%A0%91-JavaScript-%EB%9F%B0%ED%83%80%EC%9E%84-%EC%9E%91%EB%8F%99%EB%B0%A9%EC%8B%9D-%EB%B9%84%EB%8F%99%EA%B8%B0%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84)
 
