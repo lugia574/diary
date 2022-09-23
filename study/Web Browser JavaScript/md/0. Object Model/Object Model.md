@@ -75,6 +75,16 @@ Object Model 이란 것은
 
 JavaScript 언어 자체에 정의되어 있는 객체들.
 
+### BOM
+
+Browser Object Model.
+
+    웹 브라우저를 제어하기 위해 브라우저가 제공해주는 객체들
+
+웹페이지의 내용을 제외한 브라우저의 각종 요소들을 객체화시킨 것이다.
+
+전역객체 Window의 프로퍼티에 속한 객체들이 이에 속한다.
+
 ### DOM
 
 Document Object Model.
@@ -86,11 +96,3 @@ Document Object Model.
 Document 객체의 프로퍼티는 문서 내의 주요 엘리먼트에 접근할 수 있는 객체를 제공한다.
 
 또한 특정한 엘러먼트의 객체를 획득할 수 있는 메소드도 제공한다.
-
-### BOM
-
-Browser Object Model.
-
-    웹페이지의 내용을 제외한 브라우저의 각종 요소들을 객체화시킨 것이다.
-
-    전역객체 Window의 프로퍼티에 속한 객체들이 이에 속한다.
