@@ -1,8 +1,6 @@
 # var VS let VS const
 
-출처
-
-- [JavaScript - var VS let VS const](https://www.youtube.com/watch?v=61iolhWgQt0)
+[출처: JavaScript - var VS let VS const](https://www.youtube.com/watch?v=61iolhWgQt0)
 
 이전부터 이미 여러번 언급했다.
 
