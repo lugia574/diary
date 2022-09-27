@@ -79,6 +79,8 @@ JavaScript 언어 자체에 정의되어 있는 객체들.
 
 Browser Object Model.
 
+    웹브라우저의 창이나 프래임을 추상화해서 프로그래밍적으로 제어할 수 있도록 제공
+
     웹 브라우저를 제어하기 위해 브라우저가 제공해주는 객체들
 
 웹페이지의 내용을 제외한 브라우저의 각종 요소들을 객체화시킨 것이다.
@@ -88,6 +90,8 @@ Browser Object Model.
 ### DOM
 
 Document Object Model.
+
+    Document Object Model로 웹페이지를 자바스크립트로 제어하기 위한 객체 모델을 의미
 
     웹페이지의 내용을 제어한다.
 
