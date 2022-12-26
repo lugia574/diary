@@ -35,3 +35,11 @@ diary
 ### 참고자료
 
 - [생활코딩](https://opentutorials.org/module/904)
+
+## 4. 스프링
+
+[스프링(Spring), 스프링 부트(Spring Boot)란? 개념 정리](https://melonicedlatte.com/2021/07/11/174700.html)
+
+[스프링 MVC 하루만에 배우기](https://wikidocs.net/115236)
+
+[점프 투 스프링부트](https://wikidocs.net/book/7601)
