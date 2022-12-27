@@ -16,6 +16,10 @@ diary
 
 - [점프 투 자바](https://wikidocs.net/book/31)
 
+- [뉴렉쳐 자바강의](https://www.youtube.com/playlist?list=PLq8wAnVUcTFV4ZjRbyGnw6T1tgmYDLM3P)
+
+https://www.youtube.com/watch?v=AwIv3iqQGnw&list=PLq8wAnVUcTFV4ZjRbyGnw6T1tgmYDLM3P&index=10
+
 ## 2. [JavaScript](https://github.com/lugia574/diary/tree/main/study/JavaScript/md)
 
 ### 참고자료
