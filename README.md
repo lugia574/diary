@@ -16,9 +16,13 @@ diary
 
 - [점프 투 자바](https://wikidocs.net/book/31)
 
+- [뉴렉쳐 프로그래밍 사전지식](https://www.youtube.com/watch?v=PHqDCkv09lk&list=PLq8wAnVUcTFXna0fCAsElIj2qayRqvGjk&index=1)
+
+> 현재 진행 : https://www.youtube.com/watch?v=_kuToIoS15Y&list=PLq8wAnVUcTFXna0fCAsElIj2qayRqvGjk&index=7
+
 - [뉴렉쳐 자바강의](https://www.youtube.com/playlist?list=PLq8wAnVUcTFV4ZjRbyGnw6T1tgmYDLM3P)
 
-https://www.youtube.com/watch?v=AwIv3iqQGnw&list=PLq8wAnVUcTFV4ZjRbyGnw6T1tgmYDLM3P&index=10
+> 현재 진행 : https://www.youtube.com/watch?v=ueak3WdYP-A&list=PLq8wAnVUcTFV4ZjRbyGnw6T1tgmYDLM3P&index=15
 
 ## 2. [JavaScript](https://github.com/lugia574/diary/tree/main/study/JavaScript/md)
 
