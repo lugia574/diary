@@ -22,7 +22,7 @@ diary
 
 - [뉴렉쳐 자바강의](https://www.youtube.com/playlist?list=PLq8wAnVUcTFV4ZjRbyGnw6T1tgmYDLM3P)
 
-> 현재 진행 : https://www.youtube.com/watch?v=ueak3WdYP-A&list=PLq8wAnVUcTFV4ZjRbyGnw6T1tgmYDLM3P&index=15
+> 현재 진행 : https://www.youtube.com/watch?v=ueak3WdYP-A&list=PLq8wAnVUcTFV4ZjRbyGnw6T1tgmYDLM3P&index=16
 
 ## 2. [JavaScript](https://github.com/lugia574/diary/tree/main/study/JavaScript/md)
 
@@ -51,3 +51,5 @@ diary
 [스프링 MVC 하루만에 배우기](https://wikidocs.net/115236)
 
 [점프 투 스프링부트](https://wikidocs.net/book/7601)
+
+[RestAPI 란?](https://www.redhat.com/ko/topics/api/what-is-a-rest-api)
