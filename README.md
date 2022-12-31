@@ -18,8 +18,6 @@ diary
 
 - [뉴렉쳐 프로그래밍 사전지식](https://www.youtube.com/watch?v=PHqDCkv09lk&list=PLq8wAnVUcTFXna0fCAsElIj2qayRqvGjk&index=1)
 
-> 현재 진행 : https://www.youtube.com/watch?v=_kuToIoS15Y&list=PLq8wAnVUcTFXna0fCAsElIj2qayRqvGjk&index=7
-
 - [뉴렉쳐 자바강의](https://www.youtube.com/playlist?list=PLq8wAnVUcTFV4ZjRbyGnw6T1tgmYDLM3P)
 
 > 현재 진행 :https://www.youtube.com/watch?v=9fzxOYOsHrg&list=PLq8wAnVUcTFV4ZjRbyGnw6T1tgmYDLM3P&index=21
@@ -49,6 +47,8 @@ diary
 [스프링(Spring), 스프링 부트(Spring Boot)란? 개념 정리](https://melonicedlatte.com/2021/07/11/174700.html)
 
 [스프링 MVC 하루만에 배우기](https://wikidocs.net/115236)
+
+[스프링 원리](https://catsbi.oopy.io/e5ab2f18-321c-4ac5-a7bb-df739964d5c2)
 
 [점프 투 스프링부트](https://wikidocs.net/book/7601)
 
