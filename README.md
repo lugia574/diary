@@ -20,7 +20,6 @@ diary
 
 - [뉴렉쳐 자바강의](https://www.youtube.com/playlist?list=PLq8wAnVUcTFV4ZjRbyGnw6T1tgmYDLM3P)
 
-> 현재 진행 :https://www.youtube.com/watch?v=X1ZYZkSyi7g&list=PLq8wAnVUcTFV4ZjRbyGnw6T1tgmYDLM3P&index=71
 
 ## 2. [JavaScript](https://github.com/lugia574/diary/tree/main/study/JavaScript/md)
 
