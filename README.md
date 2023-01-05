@@ -20,7 +20,6 @@ diary
 
 - [뉴렉쳐 자바강의](https://www.youtube.com/playlist?list=PLq8wAnVUcTFV4ZjRbyGnw6T1tgmYDLM3P)
 
-
 ## 2. [JavaScript](https://github.com/lugia574/diary/tree/main/study/JavaScript/md)
 
 ### 참고자료
@@ -52,3 +51,9 @@ diary
 [점프 투 스프링부트](https://wikidocs.net/book/7601)
 
 [RestAPI 란?](https://www.redhat.com/ko/topics/api/what-is-a-rest-api)
+
+[jdbc 참고 자료](https://www.youtube.com/watch?v=36BrF4MwVgw&list=PL3036mp45iYxtUycKjRDCETuCv2e_DSp3)
+
+https://www.youtube.com/watch?v=_696SMBLqRA&t=79s
+
+https://www.youtube.com/watch?v=bYu9MNLBvX0&list=PLq8wAnVUcTFUHYMzoV2RoFoY2HDTKru3T&index=7
