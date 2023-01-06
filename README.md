@@ -54,6 +54,8 @@ diary
 
 [jdbc 참고 자료](https://www.youtube.com/watch?v=36BrF4MwVgw&list=PL3036mp45iYxtUycKjRDCETuCv2e_DSp3)
 
+-스프링 부트 웹소켓 구현
 https://www.youtube.com/watch?v=_696SMBLqRA&t=79s
 
-https://www.youtube.com/watch?v=bYu9MNLBvX0&list=PLq8wAnVUcTFUHYMzoV2RoFoY2HDTKru3T&index=7
+- 뉴렉처 스프링 강의
+  https://www.youtube.com/watch?v=bYu9MNLBvX0&list=PLq8wAnVUcTFUHYMzoV2RoFoY2HDTKru3T&index=7
