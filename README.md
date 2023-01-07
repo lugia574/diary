@@ -60,4 +60,4 @@ diary
 
 - 뉴렉처 스프링 강의
 
-  https://www.youtube.com/watch?v=bYu9MNLBvX0&list=PLq8wAnVUcTFUHYMzoV2RoFoY2HDTKru3T&index=7
+  https://www.youtube.com/watch?v=XzrXZIRB1vM&list=PLq8wAnVUcTFUHYMzoV2RoFoY2HDTKru3T&index=17
