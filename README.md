@@ -83,3 +83,11 @@ diary
 그러기 위해서는 스프링 오라클 연결해야함
 
 - war/ jar 차이점
+
+  뷰를 jsp 로 한다면 > war
+
+  뷰를 jsp 로 안한다면 > jar
+
+- forward / sendRedirect 차이점
+
+  https://www.youtube.com/watch?v=zDBC94qkPmE
