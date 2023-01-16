@@ -48,7 +48,7 @@ diary
 
 [스프링 원리](https://catsbi.oopy.io/e5ab2f18-321c-4ac5-a7bb-df739964d5c2)
 
-[점프 투 스프링부트](https://wikidocs.net/book/7601)
+[점프 투 스프링부트](https://wikidocs.net/book/7601)(페이징까지 알아두자)
 
 [RestAPI 란?](https://www.redhat.com/ko/topics/api/what-is-a-rest-api)
 
