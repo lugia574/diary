@@ -91,3 +91,9 @@ diary
 - forward / sendRedirect 차이점
 
   https://www.youtube.com/watch?v=zDBC94qkPmE
+
+- 리액트
+
+  https://react.vlpt.us/basic/
+
+아 delete, update 아직 못함
