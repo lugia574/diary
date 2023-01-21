@@ -96,4 +96,4 @@ diary
 
   https://react.vlpt.us/basic/
 
-아 delete, update 아직 못함
+다 한듯? 이제 게시판 form 만 하면 될듯?
