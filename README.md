@@ -97,3 +97,5 @@ diary
   https://react.vlpt.us/basic/
 
 다 한듯? 이제 게시판 form 만 하면 될듯?
+
+운세 봄 적어놈
