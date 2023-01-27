@@ -121,3 +121,15 @@ diary
 search 기능을 구현하면 거기에도 페이징 기능을 구현해야 할텐데
 
 흐으음 흐음 흠흠흠흠ㅎ흐흠흠흠
+
+---
+
+이번에 드디어 ts - react 에서
+
+컴포넌트 매개변수에 fnc 값을 선언 방법을 알아냄
+
+```ts
+setPage: React.Dispatch<React.SetStateAction<number>>;
+```
+
+이럼 됨
