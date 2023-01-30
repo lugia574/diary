@@ -142,6 +142,6 @@ https://www.daleseo.com/react-pagination/
 
 이제 게임란 좀 채울려고 하는데
 
-자꾸 뭐가 안된다 ㅋㅋㅋㅋ
+자꾸 뭐가 안된다 ㅋㅋㅋㅋ >> 됐다 시이바러
 
 https://www.youtube.com/watch?v=w-mxeKctUVg&t=1s
