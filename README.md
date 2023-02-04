@@ -145,3 +145,9 @@ https://www.daleseo.com/react-pagination/
 자꾸 뭐가 안된다 ㅋㅋㅋㅋ >> 됐다 시이바러
 
 https://www.youtube.com/watch?v=w-mxeKctUVg&t=1s
+
+---
+
+다익스트라 알고리즘
+
+https://blog.naver.com/PostView.naver?blogId=ndb796&logNo=221234424646&redirect=Dlog&widgetTypeCall=true&directAccess=false
