@@ -1,4 +1,4 @@
-package study.Java.code.b;
+package study.Java.code.pracitce;
 
 public class javaVSjs {
     public static void 먼데() {
