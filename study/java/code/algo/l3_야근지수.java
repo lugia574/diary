@@ -13,7 +13,6 @@ import java.util.PriorityQueue;
 // works는 길이 1 이상, 20,000 이하인 배열입니다.
 // works의 원소는 50000 이하인 자연수입니다.
 // n은 1,000,000 이하인 자연수입니다.
-
 public class l3_야근지수 {
     public static class Solution {
         public long solution(int n, int[] works) {
