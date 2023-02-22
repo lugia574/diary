@@ -19,38 +19,18 @@ import java.util.Arrays;
 public class l3_단속카메라 {
     public static class Solution {
         public int solution(int[][] routes) {
-            int answer = 0;
-            int length = routes.length;
-            int[] check = new int[length];
+            int answer = 1;
+            Arrays.sort(routes, (o1,o2)-> {return o1[0]-o2[0];});
 
-            for (int i = 0; i < length; i++) {
-                if (check[i] != 0) continue;
+            int end =  routes[0][1];
 
-                int start = routes[i][0];
-                int end =  routes[i][1];
-                int pointer = 0;
-                int maxCnt = 0;
-
-                for (int j = start; j < end; j++) {
-                    int cnt = 0;
-                    for (int car = 0; car < length; car++) {
-                        if(routes[car][0] <= j && j <= routes[car][1]) cnt++;
-                    }
-                    if (maxCnt < cnt) {
-                        maxCnt = cnt;
-                        pointer = j;
-                    }
-
+            for (int[] route : routes) {
+                if (route[0] <= end){
+                    end = Math.min(end, route[1]);
+                }else{
+                    answer++;
+                    end = route[1];
                 }
-
-                for (int car = 0; car < length; car++) {
-                    if(routes[car][0] <= pointer && pointer <= routes[car][1] && check[car] == 0) check[car] = 1;
-                }
-
-                if (Arrays.stream(check).sum() == length) break;
-
-                answer ++;
-                
             }
             return answer;
         }
