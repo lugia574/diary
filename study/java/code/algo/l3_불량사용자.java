@@ -16,30 +16,7 @@ package study.Java.code.algo;
 // 제재 아이디 목록들을 구했을 때 아이디들이 나열된 순서와 관계없이 아이디 목록의 내용이 동일하다면 같은 것으로 처리하여 하나로 세면 됩니다.
 
 
-// for (int i = 0; i < banArrsLenght; i++) {
-//     for (int j = 0; j < userArrsLenght; j++) {
-//         if(check[j] == 1) continue;
-        
-//         ////
-//         int banLen = banned_id[i].length();
-//         int userLen = user_id[j].length();
-//         if (banLen != userLen) continue;
-//         String[] banArrayStr = banned_id[i].split("");
-//         String[] userArrayStr = user_id[j].split("");
-        
-//         int porv = 0;
-//         for (int k = 0; k < banLen; k++) {
-//             if (banArrayStr[k] != userArrayStr[k]) continue;
-//             else if (banArrayStr[k]=="*" || banArrayStr[k] == userArrayStr[k]) {
-//                 porv++;
-//             };
-//         }
-//         if (porv == banLen){
-//             answer++;
-//         }
-        
-//     }
-// }
+
 
 public class l3_불량사용자 {
     public static class Solution {

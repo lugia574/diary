@@ -14,7 +14,7 @@ import java.util.PriorityQueue;
 // works의 원소는 50000 이하인 자연수입니다.
 // n은 1,000,000 이하인 자연수입니다.
 public class l3_야근지수 {
-    public static class Solution {
+     static class Solution {
         public long solution(int n, int[] works) {
             long answer = 0;
             int length = works.length;
