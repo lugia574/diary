@@ -3,6 +3,7 @@ package study.Java.code.algo;
 // 노래는 고유 번호로 구분하며, 노래를 수록하는 기준은 다음과 같습니다.
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 // 속한 노래가 많이 재생된 장르를 먼저 수록합니다.
@@ -23,41 +24,59 @@ import java.util.HashMap;
 // Integer genreCnt = Collections.max(map.values());
 
 
-class MusicAlbum{
-    String genre;
-    int playCnt;
-    int idx;
 
-    public MusicAlbum(String genre, int playCnt, int idx){
-        this.genre = genre;
-        this.playCnt = playCnt;
-        this.idx = idx;
-    }
-}
+// 1. 어떻게 푸냐면 각각 값을 해쉬에 넣어서 가장 play 수 값을 뽑아 그럼 pop 이 나오겠지 뭐 그리고 pop 장르 삭제  >>> while 문으로 할것
+// 2. 해당 장르의 노래 최대 플레이 노래 준최대 플레이 노래 이렇게 2개 뽑고 idx 해당 저장해  >>> for 문 2 회 로 하면 될듯
+// 3. 1번을 다시 돌려 pop 이 사라졌으니까 이번에는 pop 다음 최대 나오겠네
+// 4. 해당 과정을 map 이 사라질때까지 계속 해버려~ 가버렷~~ 응기잇~
+// class MusicAlbum{
+//     String genre;
+//     int playCnt;
+//     int idx;
+
+//     public MusicAlbum(String genre, int playCnt, int idx){
+//         this.genre = genre;
+//         this.playCnt = playCnt;
+//         this.idx = idx;
+//     }
+// }
 
 class BestAlbumSolution {
     public int[] solution(String[] genres, int[] plays) {
-        int[] answer = new int[genres.length];
+        int genresLength = genres.length;
+        int[] answer = new int[genresLength];
         HashMap<String, Integer> map = new HashMap<>();
+        HashMap<Integer, Integer> playMusic = new HashMap<>();
+        ArrayList<Integer> orderList = new ArrayList<>();
 
+        // 우선 앨법을 다 집어 넣엇
         for (int i = 0; i < genres.length; i++) {
             map.put(genres[i], map.getOrDefault(genres[i], 0)+plays[i]);
 
         }
 
-        ArrayList<String> genres_ordered = new ArrayList<>();
         while(map.size()!=0){
-            int max = -1;
-            String max_key = "";
-            for(String key : map.keySet()){
-                int tmp_cnt = map.get(key);
-                if(tmp_cnt>max){
-                    max = tmp_cnt;
-                    max_key = key;
+            // map 중에 가장 높은 장르 뽑기
+            Integer maxPlay = Collections.max(map.values());
+            String maxPlayGenre = "";
+            for (String key : map.keySet()) {
+                if(map.get(key).equals(maxPlay)){
+                    maxPlayGenre = key;
+                    map.remove(key);
+                    break;
                 }
             }
-            genres_ordered.add(max_key);
-            map.remove(max_key);
+            // 이거 아닌거 같은데 흠흠흠
+            for (int i = 0; i < genresLength; i++) {
+                if (genres[i].equals(maxPlayGenre)){
+                    playMusic.put(i, plays[i]);
+                }
+            }
+            // 플레이수 가장 높은 2개 뽑아내기
+            for (int j = 0; j < 2; j++) {
+                
+            }
+
         }
 
         
