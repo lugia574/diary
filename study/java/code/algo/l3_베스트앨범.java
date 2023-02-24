@@ -2,6 +2,7 @@ package study.Java.code.algo;
 // 장르 별로 가장 많이 재생된 노래를 두 개씩 모아 베스트 앨범을 출시
 // 노래는 고유 번호로 구분하며, 노래를 수록하는 기준은 다음과 같습니다.
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 // 속한 노래가 많이 재생된 장르를 먼저 수록합니다.
@@ -19,6 +20,9 @@ import java.util.HashMap;
 // 장르에 속한 곡이 하나라면, 하나의 곡만 선택합니다.
 // 모든 장르는 재생된 횟수가 다릅니다.
 
+// Integer genreCnt = Collections.max(map.values());
+
+
 class MusicAlbum{
     String genre;
     int playCnt;
@@ -31,7 +35,7 @@ class MusicAlbum{
     }
 }
 
-class Solution {
+class BestAlbumSolution {
     public int[] solution(String[] genres, int[] plays) {
         int[] answer = new int[genres.length];
         HashMap<String, Integer> map = new HashMap<>();
@@ -41,13 +45,28 @@ class Solution {
 
         }
 
+        ArrayList<String> genres_ordered = new ArrayList<>();
+        while(map.size()!=0){
+            int max = -1;
+            String max_key = "";
+            for(String key : map.keySet()){
+                int tmp_cnt = map.get(key);
+                if(tmp_cnt>max){
+                    max = tmp_cnt;
+                    max_key = key;
+                }
+            }
+            genres_ordered.add(max_key);
+            map.remove(max_key);
+        }
+
         
         return answer;
     }
 }
 
 public class l3_베스트앨범 {
-    Solution sol = new Solution();
+    BestAlbumSolution sol = new BestAlbumSolution();
 
     String[] genres = {"classic", "pop", "classic", "classic", "pop"};
     int[] plays = {500, 600, 150, 800, 2500};

@@ -26,7 +26,7 @@ public class l2_피보나치 {
         int n = 3;
         int res = 2;
         Solution1 sol = new Solution1();
-        int ans = sol.solution(3);
+        int ans = sol.solution(n);
         System.out.println(ans);
         System.out.println(res == ans ? "True":"False");
     }

@@ -16,29 +16,29 @@ package study.Java.code.algo;
 // 제재 아이디 목록들을 구했을 때 아이디들이 나열된 순서와 관계없이 아이디 목록의 내용이 동일하다면 같은 것으로 처리하여 하나로 세면 됩니다.
 
 
+class ErrorSolution {
+    public void DFS(int level, String[] user, String[] ban){
+        //if (level == 1)
+        
+    }
+    public int solution(String[] user_id, String[] banned_id) {
+        int answer = 0;
+        //int banArrsLenght = banned_id.length;
+        int userArrsLenght = user_id.length;
+        int[] check = new int[userArrsLenght];
 
-
-public class l3_불량사용자 {
-    public static class Solution {
-        public void DFS(int level, String[] user, String[] ban){
-            //if (level == 1)
+        for (int i = 0; i < check.length; i++) {
             
         }
-        public int solution(String[] user_id, String[] banned_id) {
-            int answer = 0;
-            int banArrsLenght = banned_id.length;
-            int userArrsLenght = user_id.length;
-            int[] check = new int[userArrsLenght];
 
-            for (int i = 0; i < banArrsLenght; i++) {
-                
-            }
-
-            return answer;
-        }
+        return answer;
     }
+}
+public class l3_불량사용자 {
+
+    
     public static void main(String[] args) {
-        Solution sol = new Solution();
+        ErrorSolution sol = new ErrorSolution();
         String[] user_id = {"frodo", "fradi", "crodo", "abc123", "frodoc"};
         String[] banned_id = {"fr*d*", "abc1**"};
         int result = 2;
