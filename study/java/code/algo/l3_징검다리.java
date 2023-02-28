@@ -14,13 +14,16 @@ package study.Java.code.algo;
 // 이렇게 해서 정확성 테스트는 다 맞았는데
 // 효율성 테스트는 지금 죄다 틀리는 중 ㅋ
 // 흠 어떻게 해야 효율성에서 통과가 될까나
+// 슬라이딩 윈도우 알고리즘을 쓰면 On 으로 풀수 있다고 하데?
+// 대충 원리는 어떻게 돌아가는지 알게 됐음
+// 근데 이걸 어떻게 적용하지?
+
 class SSSolution {
-    public int solution(int[] stones, int k) {
+    public int normalSolution(int[] stones, int k) {
         int answer = 0;
         while(true){
             boolean pass= true;
             int jump = 0;
-
             
             for (int i = 0; i < stones.length; i++) {
                 // 0 칸이면
@@ -32,7 +35,6 @@ class SSSolution {
                     jump = 0;
                 }
                 stones[i] --;   
-                
             }
 
             
@@ -45,6 +47,20 @@ class SSSolution {
         }
         return answer;
     }
+
+
+    
+    public int SlideWidowSolution(int[] stones, int k) {
+        int s = 1, e = Integer.MAX_VALUE;
+
+        while(s <= e){
+            int mid = s + (e - s) / 2;
+            
+        }
+
+        
+        return s;
+    }
 } 
 public class l3_징검다리 {
     public static void main(String[] args) {
@@ -54,7 +70,7 @@ public class l3_징검다리 {
         int k = 3; // 최대 넘을 수 있는 칸 수
         int result = 3;
 
-        int res = sol.solution(stones, k);
+        int res = sol.SlideWidowSolution(stones, k);
         System.out.println(res);
         System.out.println(res == result ? "정답입니다." : "틀렸습니다 모지리새끼야");
     }
