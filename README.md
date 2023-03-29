@@ -106,3 +106,6 @@ diary
 
 이제 게시글 프론트 작업하면 우선은 다함?
 
+=====
+
+https://www.youtube.com/watch?v=FP6yuNH1bNE
