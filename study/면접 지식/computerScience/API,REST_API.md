@@ -42,7 +42,7 @@ REpresentational State Transfer 의 약자로
 
 `State`는 웹 애플리케이션 의 상태를 의미하며, `Transfer`는 이 상태의 전송을 의미함
 
-Representational 는 구상주의적인 이라는 뜻을 가지는데 대충
+Representational 는 재현, 표현 이라는 뜻을 가지는데 대충
 
      API 작동 방식에 대한 조건을 부과하는 소프트웨어 아키텍처
 
@@ -75,7 +75,7 @@ HTTP 요청 시스템을 REST API 원칙에 맞춰 사용하자
      - 띄어쓰기는 대시(-) 이용
      - 자료 하나당 하나의 URL
 
-   > ex) movies/avatar2
+   > ex: movies/avatar2
 
 2. Stateless
 
