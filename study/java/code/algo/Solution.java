@@ -1,24 +1,24 @@
+import java.util.*;
 
 class Solution {
     public String solution(String s) {
-        String answer = "";
-        String[] arr = s.split(" ");
-        for(int i = 0; i < arr.length; i++){
-            String w = arr[i];
-            
-            if(w.length() == 0){
-                answer += " ";
-            }else{
-                answer += w.substring(0, 1).toUpperCase();
-                answer += w.substring(1, w.length()).toLowerCase();
-                answer += " ";
+        
+        s = s.toLowerCase();
+        StringTokenizer st = new StringTokenizer(s, " ", true);
+        
+        StringBuilder answer = new StringBuilder();
+        
+        while(st.hasMoreTokens()) {
+            String word = st.nextToken();
+            if(word.length() == 0) {
+    			answer.append(" ");
             }
-            
-            if (s.substring(s.length() - 1, s.length()).equals(" ")){
-                return answer;
+            else {
+                answer.append(word.substring(0,1).toUpperCase() + word.substring(1));
             }
-            
         }
-        return  answer.substring(0, answer.length()-1);
+        
+    
+        return answer.toString();
     }
 }
