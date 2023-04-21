@@ -1,6 +1,4 @@
-package study.Java.code.algo;
-// 장르 별로 가장 많이 재생된 노래를 두 개씩 모아 베스트 앨범을 출시
-// 노래는 고유 번호로 구분하며, 노래를 수록하는 기준은 다음과 같습니다.
+
 
 import java.util.ArrayList;
 import java.util.Collections;

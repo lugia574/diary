@@ -1,4 +1,4 @@
-package study.Java.code.algo;
+
 
 public class test{
     public static void main(String[] args) {
