@@ -1,3 +1,4 @@
+// 경우의 수 참고 https://www.youtube.com/watch?v=5j6vUKqOE8Q
 package study.Java.code.algo2;
 
 import java.util.*;
