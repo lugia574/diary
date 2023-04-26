@@ -1,3 +1,5 @@
+// https://velog.io/@imok-_/프로그래머스-K번째수-java
+
 package study.Java.code.algo2.sort;
 import java.util.*;
 public class algo_k번째 {
@@ -22,7 +24,7 @@ public class algo_k번째 {
             for (int j = commands[i][0]; j <= commands[i][1]; j++) { 
             list[k++] = array[j - 1];
             }
-            Arrays.sort(list);\
+            Arrays.sort(list);
             answer[n++] = list[commands[i][2] - 1];
         }
 
