@@ -1,5 +1,6 @@
+package study.Java.code.algo2.sort;
 import java.util.*;
-public class sol5_Hindex {
+public class algo_Hindex {
     // 왜 이렇게 되는지 이해 됐음
     // 자 보면 sort 를 하자나 가령 3 0 1 6 5 이라고 하면 0 1 3 5 6 이 되겠지 
     // 그리고 나서 포문을 돌리면서 int h 변수 값을 정해
