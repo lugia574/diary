@@ -6,7 +6,19 @@ diary
 
 어떻게 될지는 모르겠지만 꾸준히 쓰도록 노력하자
 
+[정처기 문제](https://www.gunsys.com/q/index.php?midCode=1015)
+
 [프로그래머스도 그냥 지원해볼까요?](https://www.inflearn.com/chats/843546)
+
+[개발공부 좋은 사이트](https://velog.io/@kgorae/개발-참고-사이트)
+
+[HTML 핵심정리](https://booolean.tistory.com/758)
+
+[css 기초](https://velog.io/@ljinsk3/CSS-기초-내용-정리),[css 내용정리](https://blog.naver.com/r0se_pasta/223085170118) ,[css 요점 정리](https://starrykss.tistory.com/136)
+
+[js 객관식](https://github.com/lydiahallie/javascript-questions/blob/master/ko-KR/README-ko_KR.md)
+
+[java 객관식](https://opentutorials.org/module/1226/8066)
 
 ## 1. [Java](https://github.com/lugia574/diary/tree/main/study/java/md)
 
