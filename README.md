@@ -18,6 +18,8 @@ diary
 
 [js 객관식](https://github.com/lydiahallie/javascript-questions/blob/master/ko-KR/README-ko_KR.md)
 
+[[HTML5+CSS3+Javascript 웹프로그래밍]12장 연습문제](https://stonesy927.tistory.com/159)
+
 [java 객관식](https://opentutorials.org/module/1226/8066)
 
 ## 1. [Java](https://github.com/lugia574/diary/tree/main/study/java/md)
@@ -123,3 +125,5 @@ diary
 =====
 
 https://www.youtube.com/watch?v=FP6yuNH1bNE
+
+https://oizys.tistory.com/notice/12
