@@ -6,6 +6,8 @@ diary
 
 어떻게 될지는 모르겠지만 꾸준히 쓰도록 노력하자
 
+[프로그래머스도 그냥 지원해볼까요?](https://www.inflearn.com/chats/843546)
+
 ## 1. [Java](https://github.com/lugia574/diary/tree/main/study/java/md)
 
 ### 참고자료

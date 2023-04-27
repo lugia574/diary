@@ -17,8 +17,8 @@ public class algo_소수찾기 {
         int res = 3;
 
         int ans = solution(numbers);
-        //System.out.println(ans);
-        //System.err.println(res == ans);
+        System.out.println(ans);
+        System.err.println(res == ans);
     }
 
     private static int solution(String numbers) {
