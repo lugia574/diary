@@ -1,15 +1,20 @@
 // https://velog.io/@rari_1110/DFS-프로그래머스-여행경로-JAVA
+// 캬 이 주소껄 보니까 이해가 확가네
+// 진심 Ai 는 아직 멀었다! 
+
 package study.Java.code.algo2.FS;
 import java.util.*;
 
 public class algo_여행가기 {
     static boolean[] visited;
     static ArrayList<String> allRoute; 
+    static int len;
 
     public static String[] solution(String[][] tickets) {
             String[] answer = {};
             int cnt = 0;
-            visited = new boolean[tickets.length];
+            len = tickets.length;
+            visited = new boolean[len];
             allRoute = new ArrayList<>();
             
             dfs("ICN", "ICN", tickets, cnt);
@@ -22,12 +27,12 @@ public class algo_여행가기 {
     }
 
     public static void dfs(String start, String route, String[][] tickets, int cnt) {
-        if(cnt == tickets.length){
+        if(cnt == len){
             allRoute.add(route);
             return;
         }
         
-        for(int i=0; i<tickets.length; i++){
+        for(int i=0; i< len; i++){
             if(start.equals(tickets[i][0]) && !visited[i]){
                 visited[i] = true;
                 dfs(tickets[i][1], route+" "+tickets[i][1], tickets, cnt+1);
