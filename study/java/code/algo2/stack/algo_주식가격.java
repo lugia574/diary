@@ -27,7 +27,7 @@ public class algo_주식가격 {
     // 이 방식이 훨씬 깔끔함
     // 내가 한 방식은 우선 구현을 하고 돌려보니 틀리니까 수정을 한거고
     // 이건 처음부터 구상할때 해당 문제점을 인지하고 깔끔하게 구현을 한거
-    public static int[] solution2(int[] prices) {
+    private static int[] solution2(int[] prices) {
         int len = prices.length;
         int[] answer = new int[len];
         int i, j;
