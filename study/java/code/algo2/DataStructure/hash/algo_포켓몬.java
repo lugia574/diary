@@ -1,4 +1,4 @@
-package study.Java.code.algo2.hash;
+package study.Java.code.algo2.DataStructure.hash;
 
 import java.util.*;
 

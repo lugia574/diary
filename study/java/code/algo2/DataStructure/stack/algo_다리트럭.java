@@ -1,6 +1,6 @@
 // https://minhamina.tistory.com/241
 
-package study.Java.code.algo2.stack;
+package study.Java.code.algo2.DataStructure.stack;
 
 import java.util.*;
 

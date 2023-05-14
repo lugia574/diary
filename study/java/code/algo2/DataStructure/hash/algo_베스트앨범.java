@@ -2,7 +2,7 @@
 // https://d2.naver.com/helloworld/0315536
 // https://gogigood.tistory.com/70
 
-package study.Java.code.algo2.hash;
+package study.Java.code.algo2.DataStructure.hash;
 import java.util.*;
 public class algo_베스트앨범 {
     public static void main(String[] args) {

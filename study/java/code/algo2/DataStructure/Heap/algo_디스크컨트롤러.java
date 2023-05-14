@@ -1,4 +1,4 @@
-package study.Java.code.algo2.Heap;
+package study.Java.code.algo2.DataStructure.Heap;
 import java.util.*;
 
 public class algo_디스크컨트롤러 {

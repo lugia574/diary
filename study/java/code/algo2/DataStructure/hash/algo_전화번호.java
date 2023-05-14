@@ -8,7 +8,7 @@
 // map.containsKey("123")  한다고 해도 1231523526 가 123 이라고 할 수 없거든
 // 이때는 123에 포커싱 잡을게 아니라 1231523526 을 봐야해 큰값을 쪼개서 1 있냐 12 있냐 123 있냐 이렇게 substring 해서 보는거야
 
-package study.Java.code.algo2.hash;
+package study.Java.code.algo2.DataStructure.hash;
 import java.util.*;
 public class algo_전화번호 {
     public static void main(String[] args) {

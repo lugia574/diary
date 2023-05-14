@@ -1,4 +1,4 @@
-package study.Java.code.algo2.hash;
+package study.Java.code.algo2.DataStructure.hash;
 import java.util.*;
 
 public class algo_완주하지못한선수 {

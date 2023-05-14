@@ -1,4 +1,4 @@
-package study.Java.code.algo2.stack;
+package study.Java.code.algo2.DataStructure.stack;
 import java.util.*;
 public class algo_기능개발 {
     public static void main(String[] args) {

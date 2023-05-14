@@ -2,7 +2,7 @@
 // https://velog.io/@geesuee/프로그래머스-주식가격자바
 // 미친 프로그래머스는 그냥 글을 못쓰는듯??
 // 왜 항상 이해하기 힘들게 글을 쓰냐 시발 
-package study.Java.code.algo2.stack;
+package study.Java.code.algo2.DataStructure.stack;
 import java.util.*;
 public class algo_주식가격 {
     

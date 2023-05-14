@@ -1,4 +1,4 @@
-package study.Java.code.algo2.stack;
+package study.Java.code.algo2.DataStructure.stack;
 import java.util.*;
 public class algo_같은숫자싫 {
     public static void main(String[] args) {
