@@ -7,25 +7,25 @@ public class algo_9935_문자열폭탄 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
         String boomb = br.readLine();
-        int boombLen = boomb.length();
+        int boombLength = boomb.length();
 
         Stack<Character> st = new Stack<>();
 
         for(int i = 0; i < str.length(); i++){
             st.push(str.charAt(i));
             int stackLength = st.size();
-            if (stackLength >= boombLen){
+            if (stackLength >= boombLength){
                 boolean ok = true;
 
-                for(int j = 0; j < boombLen; j++){
-                    if (st.get(stackLength - boombLen + j) != boomb.charAt(j)){
+                for(int j = 0; j < boombLength; j++){
+                    if (st.get(stackLength - boombLength + j) != boomb.charAt(j)){
                         ok = false;
                         break;
                     } 
                 }
 
                 if (ok){
-                    for(int j = 0; j < boombLen; j++){
+                    for(int j = 0; j < boombLength; j++){
                         st.pop();
                     }
                 }
