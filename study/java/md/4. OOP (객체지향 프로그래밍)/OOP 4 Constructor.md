@@ -112,7 +112,8 @@ public class Em{
   }
 }
 
+```
+
 ## 출처
 
-[자바 기초 강의 - 2-8강 생성자(Constructor) - 1](https://www.youtube.com/watch?v=bIoT8QB8HL0&list=PLOSNUO27qFbtjCw-YHcmtfZAkE79HZSOO&index=10)
-```
+- [자바 기초 강의 - 2-8강 생성자(Constructor) - 1](https://www.youtube.com/watch?v=bIoT8QB8HL0&list=PLOSNUO27qFbtjCw-YHcmtfZAkE79HZSOO&index=10)
