@@ -159,6 +159,8 @@ public class Cartoon extends Drawing{
 
 - 부모클래스에 디폴트 생성자가 정의되지 있지 않다면, 자식클래스는 명시적으로 부모클래스의 생성자를 호출해야함
 
+  super 생성자는 this 생성자 처럼 바로 아래에 적어야함
+
 ```java
 public class Em{
     private String name;
