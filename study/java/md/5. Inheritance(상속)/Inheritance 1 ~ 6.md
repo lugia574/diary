@@ -1,6 +1,4 @@
-# Inheritance
-
-[출처는 생활코딩](https://www.youtube.com/playlist?list=PLuHgQVnccGMA1bRSk_SZrXMngx5iq03cc)
+# Inheritance (상속)
 
 ## 1. 수업소개
 
@@ -62,7 +60,132 @@ class CalInheritance extends Cal{
 
 코드양도 줄이고
 
-## 2. 기능의 개선과 발전
+## 2. 상속
+
+    상속은 연관있는 클래스들에 대해 공통적인 구성요소를 정의하고, 이를 대표하는 클래스를 정의
+
+- 상속관계는 "is a" 관계를 의미하며 extends 키워드를 이용해 상속관계를 정의
+
+- 상속관계에서 상속을 받는 클래스를 sub Class, derived Class, extends Class, child Class 라고 부름
+
+- 상속관계에서 상속을 제공하는 클래스는 super Class, base Class, parents Class 라고 함
+
+### 상속의 이해
+
+- 자식클래스는 부모클래스를 상속 받아서 부모클래스의 모든 자원(속성, 메소드)을 사용할 수 있음
+
+  ※ 한가지 예외 사항이 있는데
+
+  부모 클래스에서 정의된 `private field, private method` 같은 경우는 접근 할 수 없음
+
+- 자식클래스는 부모클래스에 없는 필드, 메소드를 정의하여 기능을 추가 할 수 있음
+
+- 상위클래스에 정의된 메소드를 재정의하여 다르게 동작시킬 수 있음(`오버라이딩`)
+
+### protected
+
+- 상속이 되는 부모클래스에 protected 접근 지정자로 정의된 구성요소는 자식 클래스 구성요소가 가능
+
+- 자식 클래스는 부모 클래스의 protected, public 구성요소에 대해 this 접근이 가능
+
+```java
+public class Shape{
+    protected int x;
+    protected int y;
+    protected Color color;
+
+    public void draw(){
+        System.out.println("Drawing Shape");
+    }
+}
+
+public class Rectangle extends Shape{
+    private int width;
+    private int height;
+
+    public void resize(int width, int height){
+        this.width = watch;
+        this.height = height;
+    }
+
+    public void move(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+}
+```
+
+### 상속관계에서 생성자 호출 과정
+
+- 상속 구조에서 가장 상위 부모 클래스부터 인스턴스화가 진행됨
+
+- 상속관계에서 자식클래스를 인스턴스화 하면 부모 클래스의 객체도 인스턴스화가 진행됨
+
+- 자식 클래스의 객체가 인스턴스화 되기 위해서는 먼저 부모 클래스의 객체 인스턴스화가 되어야함
+
+```java
+public class Art{
+    public Art(){
+        System.out.println("Art");
+    }
+}
+
+public class Drawing extends Art{
+    public Drawing(){
+        System.out.println("Drawing");
+    }
+}
+
+public class Cartoon extends Drawing{
+    public Cartoon(){
+        System.out.println("Cartoon");
+    }
+}
+```
+
+이렇다 할때 Art > Drawing > Cartoon 순으로 println 이 실행됨
+
+> 그리고 Art 클래스는 최상위 클래스인 Object 클래스를 상속하고 있음
+
+![메모리생성](../../pic/%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EC%83%9D%EC%84%B1.png)
+
+### Super
+
+- Super 생성자는 자식클래스에서 명시적으로 부모클래스의 생서자를 호출 하는것
+
+- 상속관계에서 부모클래스의 생성자 호출을 외부에서 명시적으로 지정할 수 없음
+
+- 자바는 자식클래스의 객체가 인스턴화될 때 기본적으로 부모클래스의 디폴트 생성자를 호출함
+
+- 부모클래스에 디폴트 생성자가 정의되지 있지 않다면, 자식클래스는 명시적으로 부모클래스의 생성자를 호출해야함
+
+```java
+public class Em{
+    private String name;
+
+    // 사용자 정의 생성자
+    public Em(String nam){
+        this.name = name;
+    }
+}
+public class Dev extends Em{
+    private double salary;
+
+    public Dev(String name){
+        super(name);
+    }
+
+    public void setSalary(double salary){
+        this.salary = salary;
+    }
+
+    public void getSalary(){
+        return salary;
+    }
+}
+```
+
+## 3. 기능의 개선과 발전
 
 사실 위의 코드는 개 쓰레기임
 
@@ -292,3 +415,11 @@ Cal2 init >> cal2
 - Abstract
 
   클래스를 상속해서 사용하려는 놈에게 특정기능은 꼭 구현해라 라고 규제
+
+## 출처
+
+- [생활코딩](https://www.youtube.com/playlist?list=PLuHgQVnccGMA1bRSk_SZrXMngx5iq03cc)
+
+- [자바 기초 강의 - 3-2강 상속(inheritence)의 이해(1)](https://www.youtube.com/watch?v=2-jsaoj1MSk&list=PLOSNUO27qFbtjCw-YHcmtfZAkE79HZSOO&index=19)
+
+- [자바 기초 강의 - 3-2강 상속(inheritence)의 이해(2)]()
