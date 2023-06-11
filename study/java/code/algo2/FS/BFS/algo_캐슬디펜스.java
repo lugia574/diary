@@ -5,137 +5,180 @@ import java.util.*;
 import java.io.*;
 
 public class algo_캐슬디펜스 {
-    static int N, M, D;
-    static int[][] board;
-    static int[][] copyBoard;
-    static int ans;
+    static int N;       // 맵의 전체 행
+    static int M;       // 맵의 전체 열
+    static int D;       // 궁수 공격가능거리
+    static int[][] map; // 격자판
 
-   public static void main(String[] args) throws NumberFormatException, IOException {
+    // 배치 할 궁수 3명
+    static List<Archer> archers = new ArrayList<>();
+
+    // 경우의 수 별로 저장할 결과 값
+    static int count = 0;
+
+    // 최종 결과 값
+    static int result = 0;
+
+    public static void main(String[] args) throws IOException {
+        // 입력을 받기위한 객체
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        N = Integer.parseInt(st.nextToken());
-        M = Integer.parseInt(st.nextToken());
-        D = Integer.parseInt(st.nextToken());
- 
-        board = new int[N + 1][M + 1];
-        copyBoard = new int[N + 1][M + 1];
-        for (int i = 1; i <= N; i++) {
-            st = new StringTokenizer(br.readLine());
-            for (int j = 1; j <= M; j++) {
-                board[i][j] = Integer.parseInt(st.nextToken());
-                copyBoard[i][j] = board[i][j];
+
+        // 행, 열, 궁수 공격거리 값 받아서 변수 초기화
+        String[] info = br.readLine().split(" ");
+        N = Integer.parseInt(info[0]);
+        M = Integer.parseInt(info[1]);
+        D = Integer.parseInt(info[2]);
+
+        // 격자판 생성 및 초기화
+        map = new int[N][M];
+        for (int i = 0; i < N; i++) {
+            String[] temp = br.readLine().split(" ");
+            for (int j = 0; j < M; j++) {
+                map[i][j] = Integer.parseInt(temp[j]);
             }
         }
- 
-        ArrayList<Integer> archer = new ArrayList<>();
-        ans = 0;
-        comb(1, M, 3, archer);
- 
-        bw.write(ans + "\n");
-        bw.flush();
-        bw.close();
-        br.close();
+
+        // 제거할 수 있는 적의 최대수 찾기
+        search(0);
+
+        // 결과 값 출력
+        System.out.println(result);
     }
- 
-    // map을 원래대로 변경.
-    public static void init() {
-        for (int i = 1; i <= N; i++) {
-            for (int j = 1; j <= M; j++) {
-                board[i][j] = copyBoard[i][j];
+
+    /**
+     * 궁수를 배치하는 경우의 수를 구하기 위한 재귀메서드
+     * @param index : 궁수 배치할 위치 인덱스
+     */
+    static void search(int index) {
+
+        // 궁수 3명의 배치가 끝난 경우
+        if (archers.size() == 3) {
+
+            // 경우의 수마다 시뮬레이션을 해야하므로 맵을 복사
+            int[][] testMap = new int[N][M];
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < M; j++) {
+                    testMap[i][j] = map[i][j];
+                }
             }
-        }
-    }
- 
-    // 거리
-    public static int distance(int r1, int r2, int c1, int c2) {
-        return Math.abs(r1 - r2) + Math.abs(c1 - c2);
-    }
- 
-    // 조합
-    public static void comb(int start, int n, int r, ArrayList<Integer> archer) {
-        if (r == 0) {
-            init();
-            attack(archer);
-            return;
-        }
- 
-        for (int i = start; i <= n; i++) {
-            archer.add(i);
-            comb(i + 1, n, r - 1, archer);
-            archer.remove(archer.size() - 1);
-        }
-    }
- 
-    // 궁수가 적을 공격하는 함수.
-    public static void attack(ArrayList<Integer> archer) {
-        int res = 0;
- 
-        // 최대 N턴까지 진행할 수 있음.
-        for (int n = 1; n <= N; n++) {
-            boolean[][] visited = new boolean[N + 1][M + 1];
-            for (int k = 0; k < archer.size(); k++) {
-                int temp = archer.get(k); // 궁수가 서 있는 x좌표
-                int minD = Integer.MAX_VALUE; // 최소 거리
-                int minR = Integer.MAX_VALUE; // 최소 거리의 y좌표
-                int minC = Integer.MAX_VALUE; // 최소 거리의 x좌표
- 
-                // 맵 전체를 탐색해서 최단거리를 찾아내는 것이 목적.
-                for (int i = 1; i <= N; i++) {
-                    for (int j = 1; j <= M; j++) {
-                        if (board[i][j] == 1) { // 적이 있을 경우
-                            if (minD >= distance(i, N + 1, j, temp)) {
-                                // 현재 구한 최소 거리보다 더 짧은 거리가 발생할 경우
-                                // 최단거리와 좌표들을 다시 초기화.
-                                if (minD > distance(i, N + 1, j, temp)) {
-                                    minD = distance(i, N + 1, j, temp);
-                                    minR = i;
-                                    minC = j;
-                                } else {
-                                    // 현재 구한 최소 거리와 지금 구한 최소 거리가 같을 경우,
-                                    // 가장 왼쪽 적부터 처지해야하므로 x좌표가 더 작은지 검사해야 함.
-                                    if (minC > j) {
-                                        minR = i;
-                                        minC = j;
-                                    }
+
+            // 남은 적의 수 카운트를 위한 변수
+            // 초기값은 그냥 99로 줌
+            int enemy = 99;
+
+            // 적이 1명 이상이면 게임 계속 진행
+            while (enemy > 0) {
+                // 배치한 궁수 3명 하나씩 꺼내기
+                for (Archer archer : archers) {
+
+                    // 궁수가 공격할 대상 위치 초기화
+                    archer.targetRow = -1;
+                    archer.targetColumn = -1;
+
+                    // 궁수와 가장 가까운 적을 찾기 위해 사용할 변수
+                    int minDistance = Integer.MAX_VALUE;
+
+                    // 가장 왼쪽 열부터 오른쪽 열로
+                    for (int j = 0; j < M; j++) {
+                        // 성과 가까운 행부터 가장 먼 행으로
+                        for (int i = N-1; i >= 0; i--) {
+                            // 해당 위치에 적이 있으면
+                            if (testMap[i][j] == 1) {
+                                // 적과 궁수의 거리 계산
+                                int temp = Math.abs(i-archer.row) + Math.abs(j- archer.column);
+
+                                // 계산한 값이 궁수공격가능거리보다 멀면 다음 위치탐색
+                                if (temp > D) {
+                                    break;
+                                }
+
+                                // 현재까지 저장된 가장 가까운 적과의 거리보다 위에서 계산한 거리 값이 작으면
+                                if (minDistance > temp) {
+                                    // 위에서 계산한 거리 값으로 변수 값 새로 저장
+                                    minDistance = temp;
+                                    // 궁수가 공격할 타켓의 위치를 현재 적의 좌표로 갱신
+                                    archer.targetRow = i;
+                                    archer.targetColumn = j;
                                 }
                             }
                         }
                     }
                 }
- 
-                // 위에 과정을 모두 거친 후, 최소 거리가 D보다 작으면,
-                // 그 좌표에 visited 처리를 해 준다.
-                if (minD <= D) {
-                    visited[minR][minC] = true;
+
+                // 궁수 하나씩 꺼내기
+                for (Archer archer : archers) {
+                    // 궁수가 공격할 타켓이 정해졌다면
+                    if (archer.targetRow != -1) {
+                        // 적을 공격해서 제거 (저장된 타켓의 좌표 값을 0으로 갱신)
+                        if (testMap[archer.targetRow][archer.targetColumn] == 1) {
+                            testMap[archer.targetRow][archer.targetColumn] = 0;
+
+                            // 적을 제거한 수 1 증가
+                            count++;
+                        }
+                    }
                 }
-            }
- 
-            // visited가 true인 좌표만 적을 처지한다.
-            // 궁수가 같은 적을 쏠 수도 있기때문에 바로 바로 map[i][j] = 0하면 안 된다.
-            for (int i = 1; i <= N; i++) {
-                for (int j = 1; j <= M; j++) {
-                    if (visited[i][j]) {
-                        board[i][j] = 0;
-                        res++;
+
+                // 남아있는 적의 수를 카운트 하기 위해 0으로 초기화
+                enemy = 0;
+
+                // 테스트 맵 전체 탐색
+                for (int j = 0; j < M; j++) {
+                    for (int i = N - 1; i >= 0; i--) {
+                        // 해당 좌표에 적이 있으면
+                        if (testMap[i][j] == 1) {
+                            // 아래로 한칸 이동하기 위해 좌표 값 계산
+                            int moveR = i + 1;
+
+                            // 아래로 한칸 이동 했을 때 맵을 벗어나면
+                            if (moveR >= N) {
+                                // 맵을 벗어나서 적은 사라짐 (해당 좌표 빈칸으로 갱신)
+                                testMap[i][j] = 0;
+                            } else {
+                                // 맵을 벗어나지 않으면 적은 아래로 한칸 이동
+                                // (해당 좌표 빈칸으로 갱신, 한칸 아래 좌표 1로 갱신)
+                                testMap[i][j] = 0;
+                                testMap[moveR][j] = 1;
+
+                                // 적이 남아있으므로 카운트변수 1 증가
+                                enemy++;
+                            }
+                        }
                     }
                 }
             }
- 
-            // 성 바로 위 줄을 모두 0으로 초기화.
-            for (int i = 1; i <= M; i++) {
-                board[N][i] = 0;
-            }
- 
-            // i번째 줄을 i-1번째 줄로 초기화.
-            for (int i = N; i >= 1; i--) {
-                for (int j = 1; j <= M; j++) {
-                    board[i][j] = board[i - 1][j];
-                }
-            }
+            // 테스트가 종료되고 적을 처치한 수가 여태까지 저장된 값보다 크면 값 갱신
+            result = Math.max(result, count);
+
+            // 새로운 테스트를 위해 카운트 변수 0으로 초기화
+            count = 0;
+
+            // 메서드 종료
+            return;
         }
- 
-        ans = Math.max(ans, res);
+
+        // 완전탐색을 위한 반복문
+        for (int i = index; i < M; i++) {
+            // 해당 위치에 궁수 배치
+            archers.add(new Archer(N, i));
+            // 다음 위치로 이동
+            search(i + 1);
+            // 해당 위치의 궁수 제거
+            archers.remove(archers.size()-1);
+        }
     }
- 
+
+    // 궁수 클래스
+    static class Archer {
+        int row;            // 궁수가 있는 행
+        int column;         // 궁수가 있는 열
+        int targetRow;      // 궁수가 공격할 타켓의 행
+        int targetColumn;   // 궁수가 공격할 타켓의 열
+
+        // 궁수 생성자 (초기좌표 값 필요)
+        public Archer(int row, int column) {
+            this.row = row;
+            this.column = column;
+        }
+    }
 }
