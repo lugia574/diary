@@ -168,7 +168,7 @@ public class algo_캐슬디펜스 {
         }
     }
 
-    // 궁수 클래스
+    // 궁수 클래스x
     static class Archer {
         int row;            // 궁수가 있는 행
         int column;         // 궁수가 있는 열

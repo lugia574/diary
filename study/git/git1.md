@@ -32,10 +32,50 @@
 
 - collaborate (협업)
 
-## 1. version (버전관리)
+## CLI
+
+기본적으로 개발자는 명령어를 이용해서 할줄을 알아야함
+
+- 익숙해지면 복잡한 GUI 없이도 할 수 있음
+
+- 명령어의 특성상 처리해야 할 일을 한번에 명령내려서 자동화를 할 수 있음
+
+- 특히 GUI 로 제어할 수 없는 서버 환경에서도 사용할 수 있는 유일한 방법임
+
+자 우선 폴더를 만들어 보자
+
+현재 내 위치는 User/lcw/diary/study/git 인 상태
+
+```git
+mkdir hello-git-cli
+```
+
+`cd hello-git-cli` 라고 입력해 폴더 안으로 들어 가보자
+
+이제 여기서 작업을 할꺼니까 버전관리를 시작해 라는 의미로
+
+`초기화`를 해주자
+
+### 초기화
+
+```git
+git init .
+```
+
+- git init : Initialize repository
+
+- .git : git repository
+
+- git status : working tree status
+
+- git add : add to staging area
+
+- git commit : create version
+
+- git log : show version
 
 ## 출처
 
-- [생활코딩 버전관리 1](https://www.youtube.com/watch?v=9btOcOLjb30&list=PLuHgQVnccGMCNJESahrVV-uYGMNYK_vMf&index=3)
+- [생활코딩 Git 1](https://www.youtube.com/watch?v=9btOcOLjb30&list=PLuHgQVnccGMCNJESahrVV-uYGMNYK_vMf&index=1)
 
-- [생활코딩 버전관리 2](https://www.youtube.com/watch?v=9fSEVG5D6vk&list=PLuHgQVnccGMCNJESahrVV-uYGMNYK_vMf&index=4)
+- [생활코딩 Git 2](https://opentutorials.org/module/3762)
