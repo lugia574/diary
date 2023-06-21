@@ -6,6 +6,8 @@ diary
 
 어떻게 될지는 모르겠지만 꾸준히 쓰도록 노력하자
 
+[신입 백엔드 개발자 업무역량에 대한 나의 생각](https://www.youtube.com/watch?v=s3JtZn0zp_A)
+
 [정처기 문제](https://www.gunsys.com/q/index.php?midCode=1015)
 
 [프로그래머스도 그냥 지원해볼까요?](https://www.inflearn.com/chats/843546)
