@@ -1,4 +1,11 @@
 // https://bcp0109.tistory.com/215
+
+// 물고기의 번호를 기준으로 정렬된 상태에서, arr[0][0]에 있는 물고기의 번호는 리스트 fishes의 인덱스와 일치하게 됩니다. 
+// 즉, arr[0][0]에 있는 물고기의 번호는 fishes 리스트에서 fishes.get(arr[0][0] - 1)을 통해 얻어올 수 있습니다.
+
+// 예를 들어, 만약 arr[0][0]에 있는 물고기의 번호가 5라면,
+//  fishes 리스트에서 fishes.get(5 - 1)을 통해 해당 물고기의 정보를 얻을 수 있습니다.
+
 package study.Java.code.algo2.FS.DFS;
 
 import java.io.*;
