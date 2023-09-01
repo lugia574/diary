@@ -9,7 +9,7 @@ public class algo_1967_트리의지름 {
     static ArrayList<int[]>[] graph;
     
     private static void dfs(int node, int weight){
-        
+        // 풀다가 말았네 ㅋㅋ
     }
     public static void main(String[] args) throws Exception{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
