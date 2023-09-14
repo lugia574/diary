@@ -9,3 +9,21 @@
 - POJO(Plain Old Java Object) 방식
 
   특정 '기술'에 종속되어 동작하는 것이 아닌 순수한 자바 객체
+
+## 의존성 주입
+
+### 장점
+
+- 의존성 감소
+
+  - 변화에 강함
+
+  - 재사용성이 높아짐
+
+  - 유지 보수 용이
+
+- 코드양 감소
+
+- 테스트 용이
+
+https://www.youtube.com/watch?v=1vdeIL2iCcM

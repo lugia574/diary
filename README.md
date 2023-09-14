@@ -6,6 +6,8 @@ diary
 
 어떻게 될지는 모르겠지만 꾸준히 쓰도록 노력하자
 
+[[컴퓨터 구조] 과목 몰아보기](https://www.youtube.com/watch?v=kFWP6sFKyp0&t=3350s)
+
 [신입 백엔드 개발자 취업준비&후기 : 자소서, 포트폴리오, 면접 TIP](https://lotuus.tistory.com/149)
 
 [신입 백엔드 개발자 업무역량에 대한 나의 생각](https://www.youtube.com/watch?v=s3JtZn0zp_A)
