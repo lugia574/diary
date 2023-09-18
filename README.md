@@ -8,6 +8,8 @@ diary
 
 [[컴퓨터 구조] 과목 몰아보기](https://www.youtube.com/watch?v=kFWP6sFKyp0&t=3350s)
 
+[[운영체제] 과목 몰아보기](https://www.youtube.com/watch?v=isj4sZhoxjk)
+
 [신입 백엔드 개발자 취업준비&후기 : 자소서, 포트폴리오, 면접 TIP](https://lotuus.tistory.com/149)
 
 [신입 백엔드 개발자 업무역량에 대한 나의 생각](https://www.youtube.com/watch?v=s3JtZn0zp_A)
