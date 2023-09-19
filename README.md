@@ -1,3 +1,7 @@
+# 가장 먼저 해야할것!
+
+https://www.youtube.com/watch?v=5kjKYj7Dyh0
+
 # diary
 
 diary
