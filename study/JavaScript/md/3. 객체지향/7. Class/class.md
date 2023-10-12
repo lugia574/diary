@@ -76,6 +76,55 @@ console.log("lee.sum()", lee.sum()); // lee.sum() prototype : 20
 
 이럼 됨
 
+## 3-1 class 객체와 생성자 함수의 차이점
+
+```js
+const User = function (name, age) {
+  this.name = name;
+  this.age = age;
+  this.showName = function () {
+    console.log(this.name);
+  };
+};
+
+const mike = new User("Mike", 33);
+
+class User2 {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  showName() {
+    console.log(this.name);
+  }
+}
+
+const tom = new User2("Tom", 333);
+```
+
+이라고 할때 mike 와 tom 객체를 부르면
+
+showName 함수까지 전부 보여주는 mike 객체와 다르게
+
+클래스로 생성한 tom 은 매개변수만 보여주고 showName 함수는 프로토 안에 들어감
+
+생성자 함수도 클래스 생성처럼 하려면
+
+```js
+User.prototype.showName = function () {
+  console.log(this.name);
+};
+```
+
+이럼 됨
+
+또한 개발자가 잘못 작성해서 실행하는 경우 생성자 함수의 경우 undefined 만 뱉고 그대로 실행됨
+
+하지만 클래스 생성의 경우 에러를 뱉음
+
+이를 통해 클래스 부분에 잘못했을때 바로 알수 있음
+
 ## 4. class 상속
 
 ```js
@@ -204,3 +253,7 @@ console.log("kim.avg()", kim.avg());
 1. super(): 부모-class의 생성자(constructor)를 참조한다.
 
 2. super.method() : 부모-class의 prototype-method를 참조한다.
+
+## 레퍼런스
+
+- https://www.youtube.com/watch?v=OpvtD7ELMQo&list=PLZKTXPmaJk8JZ2NAC538UzhY_UNqMdZB4&index=15
