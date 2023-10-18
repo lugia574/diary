@@ -67,3 +67,31 @@ function solution(array) {
   // 여러개가 아니라면 정렬한 처음 값을 반환한다.
   return Number(answer[0][0]);
 }
+
+/// 이게 뭐시다냐
+const readline = require("readline");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+let input = [];
+
+rl.on("line", function (line) {
+  input = line.split(" ");
+}).on("close", function () {
+  const n = Number(input[0]);
+  let logStr = "";
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j <= i; j++) {
+      logStr += "*";
+    }
+    logStr += "\n";
+  }
+  console.log(logStr);
+});
+
+// 정규표현식 개머싯어~
+function solution(my_string) {
+  return my_string.replace(/[aeiou]/g, "");
+}
