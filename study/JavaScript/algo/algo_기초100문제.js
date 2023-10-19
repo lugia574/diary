@@ -95,3 +95,20 @@ rl.on("line", function (line) {
 function solution(my_string) {
   return my_string.replace(/[aeiou]/g, "");
 }
+
+// map 이용해서 순서
+function solution(emergency) {
+  let order = new Map();
+  let desc = [...emergency].sort((a, b) => b - a);
+  for (let i = 0; i < desc.length; i++) {
+    order.set(desc[i], i + 1);
+  }
+  return emergency.map((v) => order.get(v));
+}
+
+// 팩토리얼
+function solution(balls, share) {
+  const fac = (num) => (num === 0 ? 1 : num * fac(num - 1));
+
+  return Math.round(fac(balls) / fac(balls - share) / fac(share));
+}
