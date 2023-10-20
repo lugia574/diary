@@ -112,3 +112,15 @@ function solution(balls, share) {
 
   return Math.round(fac(balls) / fac(balls - share) / fac(share));
 }
+
+// 아스키 코드
+function solution(my_string) {
+  let answer = "";
+  [...my_string].forEach((x) => {
+    if (x.charCodeAt() > 96) answer += x.toUpperCase();
+    else answer += x.toLowerCase();
+  });
+
+  // String.fromCharCode(숫자) 숫자 > 코드값
+  return answer;
+}
