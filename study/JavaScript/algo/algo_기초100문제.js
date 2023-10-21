@@ -124,3 +124,11 @@ function solution(my_string) {
   // String.fromCharCode(숫자) 숫자 > 코드값
   return answer;
 }
+
+// 정규표현식 하아하ㅏㅏ아
+function solution(my_string) {
+  return my_string
+    .match(/\d/g)
+    .sort((a, b) => a - b)
+    .map((n) => Number(n));
+}
