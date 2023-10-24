@@ -132,3 +132,5 @@ function solution(my_string) {
     .sort((a, b) => a - b)
     .map((n) => Number(n));
 }
+
+// 흠 풀면서 딱히 쓸게 없었음 ㅋㅋ
