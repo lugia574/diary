@@ -134,3 +134,78 @@ function solution(my_string) {
 }
 
 // 흠 풀면서 딱히 쓸게 없었음 ㅋㅋ
+// toLowerCase(); toUpperCase(); 이것을 기억하자
+const fn = (e) => {
+  e = e.toLowerCase;
+  // or
+  e = e.toUpperCase;
+  return e;
+};
+
+// 이거 dp 아닌가???
+// 아닌가 걍 누적합인가??
+// 는 그냥 1차원적으로 품 애초에 dp, 누적합 할 정도로 복잡한 문제가 아님
+// 기억해야할껀 변수.toString(); 라는거.
+function solution(i, j, k) {
+  var answer = 0;
+  for (let idx = i; idx < j + 1; idx++) {
+    const s = [...idx.toString().split("")];
+    s.forEach((e) => {
+      if (parseInt(e) === k) answer++;
+    });
+  }
+  return answer;
+}
+
+// 스택으로 풀었음
+function solution(my_string) {
+  var answer = 0;
+  const arr = [...my_string];
+  let stack = [];
+  arr.forEach((e) => {
+    if (isNaN(e)) {
+      if (stack.length === 0) return;
+      answer += parseInt(stack.join(""));
+      stack = [];
+    } else {
+      stack.push(e);
+    }
+  });
+  if (stack.length > 0) answer += parseInt(stack.join(""));
+  return answer;
+}
+// 와 시바 역시 정규표현식이 짜세긴 해
+function solution(my_string) {
+  return my_string.split(/\D+/).reduce((acc, cur) => acc + Number(cur), 0);
+}
+
+// 이진수 더하기
+const solution = (bin1, bin2) =>
+  (parseInt(bin1, 2) + parseInt(bin2, 2)).toString(2);
+
+// 근본으로 한다면
+// 음 근데 어렵다
+function solution(bin1, bin2) {
+  // 1. 두 이진수 문자열을 정수로 변환하고 더합니다.
+  let temp = Number(bin1) + Number(bin2);
+  // 2. 더한 결과를 문자열로 변환한 뒤, 뒤집고 각 자릿수를 정수 배열로 저장합니다.
+  temp = [...temp.toString()].reverse().map((v) => +v);
+
+  // 3. 자릿수를 11자리로 맞추기 위해 부족한 자릿수에 0을 추가합니다.
+  for (let i = temp.length; i < 11; i++) {
+    temp.push(0);
+  }
+
+  // 4. 각 자릿수를 검사하면서 2 이상인 경우, 다음 자릿수로 올림을 처리합니다.
+  for (let i = 0; i < temp.length; i++) {
+    if (temp[i] === 2) {
+      temp[i] = 0;
+      temp[i + 1]++;
+    } else if (temp[i] === 3) {
+      temp[i] = 1;
+      temp[i + 1]++;
+    }
+  }
+  // 5. 처리한 결과를 문자열로 변환하고, 다시 뒤집어서 이진수 문자열로 반환합니다.
+  return Number(temp.reverse().join("")).toString();
+}
