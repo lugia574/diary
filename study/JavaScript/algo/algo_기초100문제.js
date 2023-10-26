@@ -209,3 +209,72 @@ function solution(bin1, bin2) {
   // 5. 처리한 결과를 문자열로 변환하고, 다시 뒤집어서 이진수 문자열로 반환합니다.
   return Number(temp.reverse().join("")).toString();
 }
+
+/// 문자열 자르기
+
+function solution(my_str, n) {
+  var answer = [];
+  for (let i = 0; i < my_str.length; i += n) {
+    answer.push(my_str.substr(i, n));
+  }
+  return answer;
+}
+
+// x 축 기준으로 먼저 배열 정렬을 해주고
+// 인덱스가 0, 1인 애들을 비교하면 x축이 같기 때문에 y, 즉, 세로의 길이를 구할 수 있고,
+// 인덱스가 0, 2인 애들을 비교하면 y축 값이 다르든 말든 x, 즉, 가로의 길이를 구할 수 있다.
+function solution(dots) {
+  dots.sort((a, b) => a[0] - b[0]);
+  return Math.abs(dots[0][1] - dots[1][1]) * Math.abs(dots[1][0] - dots[2][0]);
+}
+
+/// 와씨 구현 문제 진짜 ㅋㅋㅋ
+function solution(polynomial) {
+  let answer = "";
+  const s = polynomial.split(" ");
+  const numHash = {};
+  numHash["x"] = 0;
+  numHash["num"] = 0;
+
+  s.forEach((e) => {
+    if (e[0] === "+") return;
+    const size = e.length;
+    if (e[size - 1] === "x") {
+      if (size > 1) numHash["x"] += parseInt(e.substr(0, size - 1));
+      else numHash["x"] += 1;
+    } else numHash["num"] += parseInt(e);
+  });
+
+  for (key in numHash) {
+    if (numHash[key] === 0) continue;
+    if (key === "num")
+      answer += answer.length > 0 ? " + " + numHash[key] : numHash[key];
+    else answer += numHash[key] > 1 ? numHash[key] + key : key;
+  }
+  return answer;
+}
+
+// 삼각형의 가장 긴 변의 길이가 나머지 두 변의 길이의 합보다 작아야합니다
+// max = 주어진 두 변 중 긴 한 변
+// min = 주어진 두 변 중 짧은 한 변
+
+// case1: 주어진 두 변의 길이 중 하나가 가장 긴 변일 경우
+// max < min + (다른 한 변)
+// max - min < (다른 한 변)
+
+// case2: 주어진 두 변 외에 다른 긴 변이 있는 경우
+// (다른 한 변) < max + min
+
+// 두 케이스를 조합하면
+// max - min < (다른 한 변) < max + min 이므로
+// (다른 한 변)이 나올 수 있는 가짓수는
+// (max + min) - (max - min) - 1 = min * 2 - 1 입니다
+function solution(sides) {
+  let count = 0;
+  const max = Math.max(...sides);
+  const min = Math.min(...sides);
+  for (let i = max - min + 1; i < max + min; i++) {
+    count++;
+  }
+  return count;
+}
