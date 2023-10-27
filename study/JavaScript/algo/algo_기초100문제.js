@@ -278,3 +278,139 @@ function solution(sides) {
   }
   return count;
 }
+
+// BFS 다
+// const visited = Array.from({ length: n }, () => Array(n).fill(0)); <<<<<<< 빈 배열 만들기
+function solution(board) {
+  const n = board.length;
+
+  let answer = n * n;
+  const visited = Array.from({ length: n }, () => Array(n).fill(0));
+  const dx = [0, 1, 1, 1, 0, -1, -1, -1];
+  const dy = [-1, -1, 0, 1, 1, 1, 0, -1];
+
+  const queue = [];
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      if (visited[i][j] === 0 && board[i][j] === 1) {
+        answer -= 1;
+        visited[i][j] = 1;
+        queue.push([i, j]);
+      }
+    }
+  }
+
+  while (queue.length > 0) {
+    const [x, y] = queue.shift();
+    for (let i = 0; i < 8; i++) {
+      const nx = x + dx[i];
+      const ny = y + dy[i];
+
+      if (0 <= nx && nx < n && 0 <= ny && ny < n) {
+        if (visited[nx][ny] === 1) continue;
+        visited[nx][ny] = 1;
+        answer -= 1;
+      }
+    }
+  }
+
+  return answer;
+}
+
+// DFS 다 근데 보기에는 좀 별로다
+function solution(board) {
+  const n = board.length;
+
+  const dfs = (x, y) => {
+    if (x < 0 || x >= n || y < 0 || y >= n) {
+      return;
+    }
+
+    if (visited[x][y] === 1 || board[x][y] === 0) {
+      return;
+    }
+
+    visited[x][y] = 1;
+
+    for (let i = 0; i < 8; i++) {
+      const nx = x + dx[i];
+      const ny = y + dy[i];
+      dfs(nx, ny);
+    }
+  };
+
+  let answer = n * n;
+  const visited = Array.from({ length: n }, () => Array(n).fill(0));
+  const dx = [0, 1, 1, 1, 0, -1, -1, -1];
+  const dy = [-1, -1, 0, 1, 1, 1, 0, -1];
+
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      if (visited[i][j] === 0 && board[i][j] === 1) {
+        answer -= 1;
+        dfs(i, j);
+      }
+    }
+  }
+
+  return answer;
+}
+
+// 기울기 아 난 수학 너무 약해
+function solution(dots) {
+  if (calculateSlope(dots[0], dots[1]) === calculateSlope(dots[2], dots[3]))
+    return 1;
+  if (calculateSlope(dots[0], dots[2]) === calculateSlope(dots[1], dots[3]))
+    return 1;
+  if (calculateSlope(dots[0], dots[3]) === calculateSlope(dots[1], dots[2]))
+    return 1;
+  return 0;
+}
+
+function calculateSlope(arr1, arr2) {
+  return (arr2[1] - arr1[1]) / (arr2[0] - arr1[0]);
+}
+
+// 먼소리냐 등수매기기
+// https://velog.io/@hedakim/프로그래머스-Javascript-등수-매기기
+// 이게 훨씬 이해하기 쉽네 https://www.youtube.com/watch?v=5nN02Qdklvc
+function solution(score) {
+  // 1. score의 길이와 동일하고, 모든 요소가 1인 배열을 선언한다.
+  let answer = new Array(score.length).fill(1);
+
+  // 2. score 배열의 각 평균 점수를 계산한 배열 avg를 선언한다.
+  const avg = score.map((e) => (e[0] + e[1]) / 2);
+
+  // 3. 이중 for문을 사용, i번째 값보다 큰 j값이 있다면 i의 값에 1을 더한다.
+  for (let i = 0; i < avg.length; i++) {
+    for (let j = 0; j < avg.length; j++) {
+      if (avg[i] < avg[j]) answer[i]++;
+    }
+  }
+
+  return answer;
+}
+
+// 배열로 체크
+function solution(lines) {
+  var answer = 0;
+  let lineMap = new Array(200).fill(0); // 선분들이 놓일 공간
+  lineMap.fill(0);
+
+  for (let i = 0; i < 3; i++) {
+    let left = lines[i][0];
+    let right = lines[i][1];
+
+    for (let j = left; j < right; j++) {
+      lineMap[j + 100] += 1;
+    }
+  }
+
+  for (let i in lineMap) {
+    if (lineMap[i] > 1) {
+      answer += 1;
+    }
+  }
+
+  return answer;
+}

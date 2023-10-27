@@ -10,6 +10,8 @@ diary
 
 어떻게 될지는 모르겠지만 꾸준히 쓰도록 노력하자
 
+[정규표현식](https://github.com/dream-ellie/regex)
+
 [[컴퓨터 구조] 과목 몰아보기](https://www.youtube.com/watch?v=kFWP6sFKyp0&t=3350s)
 
 [[운영체제] 과목 몰아보기](https://www.youtube.com/watch?v=isj4sZhoxjk)
@@ -139,3 +141,5 @@ diary
 https://www.youtube.com/watch?v=FP6yuNH1bNE
 
 https://oizys.tistory.com/notice/12
+
+---
