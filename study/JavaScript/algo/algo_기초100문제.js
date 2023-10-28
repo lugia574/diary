@@ -414,3 +414,40 @@ function solution(lines) {
 
   return answer;
 }
+
+/// sort 진심 역겹
+// 이러면 n 의 가까운순으로 정렬하데 같은 값이면 큰값으로 정렬이 된다고??
+// || 가 앞에 식이 0 이 될 경우 하라는거야?
+// 네, JavaScript에서 || (논리 OR 연산자)는 앞에 있는 표현식이 0, null, undefined,
+// 빈 문자열 또는 false와 같이 falsy한 값인 경우, 그 결과가 뒤에 있는 표현식의 값을 따릅니다.
+// 따라서 Math.abs(a - n) - Math.abs(b - n) || b - a에서:
+
+// Math.abs(a - n) - Math.abs(b - n)가 0이면, b - a로 판단됩니다.
+// Math.abs(a - n) - Math.abs(b - n)가 0이 아니라면, Math.abs(a - n) - Math.abs(b - n)로 판단됩니다.
+// 이것은 기본적으로 정렬의 우선순위를 설정하는 것이며, 정렬을 수행할 때 특정 조건을 만족하는 요소들을 앞으로 두거나 뒤로 두고자 할 때 유용합니다.
+function solution(numlist, n) {
+  return numlist.sort((a, b) => Math.abs(a - n) - Math.abs(b - n) || b - a);
+}
+
+// 문자열 문제의 마스터키 >>> 정규식 시벌 ㅋㅋ 그냥 ㅈ사기 그자체 ㅋㅋ
+function solution(babbling) {
+  var answer = 0;
+  const regex = /^(aya|ye|woo|ma)+$/;
+
+  babbling.forEach((word) => {
+    if (regex.test(word)) answer++;
+  });
+
+  return answer;
+}
+
+// 모야모야 내가 푼 방식이랑 완젼 똑같자너~~ ㅋㅋㅋ 개꿀띠야~
+// https://leejams.github.io/%EC%97%B0%EC%86%8D%EB%90%9C-%EC%88%98%EC%9D%98-%ED%95%A9/
+function solution(num, total) {
+  let answer = [];
+  let start = Math.ceil(total / num - Math.floor(num / 2));
+
+  for (let i = 0; i < num; i++) answer.push(start++);
+
+  return answer;
+}
