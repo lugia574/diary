@@ -20,4 +20,5 @@ function solution(n) {
   return [...n.toString()].reduce((a, cur) => parseInt(a) + parseInt(cur), 0);
 }
 
-// 문자열을 정수로 바꾸기
+// 정수인지 실수인지 판별
+Number.isInteger(숫자);
