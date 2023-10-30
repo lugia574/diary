@@ -281,6 +281,7 @@ function solution(sides) {
 
 // BFS 다
 // const visited = Array.from({ length: n }, () => Array(n).fill(0)); <<<<<<< 빈 배열 만들기
+// const arr = Array.from({length: 10}, x => 0); <<<<<<<<<<<<< 1차 배열은 이러케
 function solution(board) {
   const n = board.length;
 

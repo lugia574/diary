@@ -22,3 +22,17 @@ function solution(n) {
 
 // 정수인지 실수인지 판별
 Number.isInteger(숫자);
+
+// 슬라이스
+function solution(arr) {
+  arr.splice(arr.indexOf(Math.min(...arr)), 1);
+  if (arr.length < 1) return [-1];
+  return arr;
+}
+
+// 아스키 코드로 문자sort
+function solution(s) {
+  var answer = "";
+  const arr = [...s].sort((a, b) => b.charCodeAt() - a.charCodeAt());
+  return arr.join("");
+}
