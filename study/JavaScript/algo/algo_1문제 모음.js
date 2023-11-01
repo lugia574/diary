@@ -109,3 +109,52 @@ function solution(strings, n) {
   );
   return strings;
 }
+
+// 둠스데이 알고리즘
+// 아 이런거 몰라잉
+function solution(a, b) {
+  const days = ["FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU"];
+  // 윤년의 일 수
+  const month = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  let count = -1; // 0~365일
+
+  for (let i = 0; i < a - 1; i++) {
+    count += month[i];
+  }
+
+  return days[(count + b) % 7];
+}
+
+// 또는 그냥 date 쓰면
+function getDayName(a, b) {
+  var tempDate = new Date(2016, a - 1, b);
+
+  return tempDate.toString().slice(0, 3).toUpperCase();
+}
+
+// 소수 찾기 좀더 효율적으로 개선한거
+function solution(n) {
+  let answer = 0;
+  const arr = new Array(n + 1).fill(true);
+
+  for (let i = 2; i <= n; ++i) {
+    // 이미 소수가 아닌 인덱스는 건너뛴다.
+    if (arr[i] === false) {
+      continue;
+    }
+    // 배수는 소수가 아니라 0으로 설정
+    for (let k = i * 2; k <= n; k += i) {
+      arr[k] = false;
+    }
+  }
+  // 소수의 갯수를 구한다.
+  for (let i = 2; i <= n; ++i) {
+    if (arr[i] === true) {
+      answer++;
+    }
+  }
+  return answer;
+}
+
+// 와 시바 오늘 뭘 하기가 싫다 진짜
