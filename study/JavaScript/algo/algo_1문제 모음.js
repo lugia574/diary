@@ -157,4 +157,32 @@ function solution(n) {
   return answer;
 }
 
-// 와 시바 오늘 뭘 하기가 싫다 진짜
+// js 에서 0으로 채워진 배열 선언하기
+// 1차원
+const zeroFullArr1 = new Array(길이).fill(0);
+
+// 2차원
+const zeroFullArr2 = Array.from({ length: 길이 }, () =>
+  new Array(길이).fill(0)
+);
+
+// 비밀지도
+function solution(n, arr1, arr2) {
+  var answer = [];
+  const arr = Array.from({ length: n }, () => new Array(n).fill(0));
+  for (let i = 0; i < n; i++) {
+    let route = (arr1[i] | arr2[i]).toString(2);
+
+    let sp = "";
+    if (route.length < n) for (let i = 0; i < n - route.length; i++) sp += "0";
+    route = sp + route;
+
+    let row = "";
+    for (let i = 0; i < n; i++) {
+      if (route[i] === "1") row += "#";
+      else if (route[i] === "0") row += " ";
+    }
+    answer.push(row);
+  }
+  return answer;
+}
