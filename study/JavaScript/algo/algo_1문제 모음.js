@@ -186,3 +186,32 @@ function solution(n, arr1, arr2) {
   }
   return answer;
 }
+
+// 숫자짝꿍
+function solution(X, Y) {
+  // 각 숫자의 등장 횟수를 세기 위한 배열
+  const countX = new Array(10).fill(0);
+  const countY = new Array(10).fill(0);
+
+  // X와 Y에서 각 숫자의 등장 횟수를 센다
+  for (let i = 0; i < X.length; i++) {
+    countX[parseInt(X[i])]++;
+  }
+  for (let i = 0; i < Y.length; i++) {
+    countY[parseInt(Y[i])]++;
+  }
+
+  let result = "";
+
+  // 9부터 0까지의 숫자 중, 두 수에서 공통으로 나타나는 숫자를 찾음
+  for (let num = 9; num >= 0; num--) {
+    const commonCount = Math.min(countX[num], countY[num]);
+    if (commonCount > 0) {
+      // 해당 숫자를 두 수에서 최소 등장 횟수만큼 붙임
+      result += num.toString().repeat(commonCount);
+    }
+  }
+
+  // 공통으로 나타나는 숫자가 없는 경우 -1을 반환
+  return result === "" ? "-1" : result;
+}
