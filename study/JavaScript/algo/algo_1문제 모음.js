@@ -215,3 +215,28 @@ function solution(X, Y) {
   // 공통으로 나타나는 숫자가 없는 경우 -1을 반환
   return result === "" ? "-1" : result;
 }
+
+// 크레인 인형뽑기 게임
+// 아 졸리다 한숨 자고 싶네
+function solution(board, moves) {
+  var answer = 0;
+  const boardSize = board.length;
+  const stack = [];
+  moves.forEach((loc) => {
+    let obj = 0;
+    let stackSize = stack.length;
+    let x = 0;
+    for (let i = boardSize - 1; i > -1; i--) {
+      if (board[i][loc - 1] === 0) break;
+      obj = board[i][loc - 1];
+      x = i;
+    }
+    board[x][loc - 1] = 0;
+    if (obj === 0) return;
+    if (stackSize > 0 && stack[stackSize - 1] === obj) {
+      stack.pop();
+      answer += 2;
+    } else stack.push(obj);
+  });
+  return answer;
+}
