@@ -246,3 +246,50 @@ function solution(numbers, hand) {
   var answer = "";
   return answer;
 }
+
+// 공원 산책
+// 너무 코드가 길다 굳이 board를 안해도 될꺼 같은데 어차피 X 랑 n, m 만 거르면 되는거지
+function solution(park, routes) {
+  const dir = { E: [0, 1], W: [0, -1], S: [1, 0], N: [-1, 0] };
+  let x = 0;
+  let y = 0;
+  const n = park.length;
+  const m = park[1].length;
+  let board = [];
+  let chek = false;
+
+  for (let i = 0; i < n; i++) {
+    board.push([...park[i]]);
+    if (chek) continue;
+    for (let j = 0; j < m; j++) {
+      if (board[i][j] === "S") {
+        x = i;
+        y = j;
+        chek = true;
+        break;
+      }
+    }
+  }
+
+  while (routes.length > 0) {
+    const loc = routes.shift().split(" ");
+    const nd = dir[loc[0]];
+    let nx = x;
+    let ny = y;
+    let ok = true;
+    for (let i = 0; i < parseInt(loc[1]); i++) {
+      nx += nd[0];
+      ny += nd[1];
+      if (0 > nx || nx >= n || 0 > ny || ny >= m || board[nx][ny] === "X") {
+        ok = false;
+        break;
+      }
+    }
+    if (!ok) continue;
+    board[x][y] = "O";
+    board[nx][ny] = "S";
+    x = nx;
+    y = ny;
+  }
+  return [x, y];
+}
