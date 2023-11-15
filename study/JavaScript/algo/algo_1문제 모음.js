@@ -242,7 +242,6 @@ function solution(board, moves) {
 }
 
 // 키패드 누르기
-// 아 ㅅㅂ 잘때 이상하게 자서 목이 또 아퍼 이런 ㅅㅂ
 function solution(numbers, hand) {
   var answer = "";
   return answer;
