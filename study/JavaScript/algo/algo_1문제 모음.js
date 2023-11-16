@@ -293,3 +293,25 @@ function solution(park, routes) {
   }
   return [x, y];
 }
+
+// 달리기 경주
+// 단순히 indexOf 를 사용할시 무조건 시간초과가 걸리도록 설계되어 있음
+// 그렇기에 딕셔너리를 사용해서 풀어야함
+// 이걸 좀 생각을 잘 못했다
+function solution(players, callings) {
+  let dic = {};
+  players.forEach((name, rank) => (dic[name] = rank));
+  for (let i = 0; i < callings.length; i++) {
+    // 딕셔너리(오브젝트)
+    const curRank = dic[callings[i]];
+    dic[callings[i]] -= 1;
+    dic[players[curRank - 1]] += 1;
+
+    // 순서바꾸기
+    let tmp = players[curRank];
+    players[curRank] = players[curRank - 1];
+    players[curRank - 1] = tmp;
+  }
+
+  return players;
+}
