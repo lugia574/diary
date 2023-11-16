@@ -63,3 +63,21 @@ vcs 는 버전 컨트롤 시스템
 - status (상태)
 
 - init (Initialize 초기화)
+
+- add
+
+  git add (파일명)
+
+  이러면 이제부터 트래킹 ㄱㄱ
+
+- commit 버전 생성
+
+  git commit -m "커밋 코멘트"
+
+- remote
+
+  git remote add (원격저장소 별칭) (원격저장소 URL)
+
+  git remote -v
+
+  git push (원격저장소 별칭) (원격저장소 레포지토리명)
