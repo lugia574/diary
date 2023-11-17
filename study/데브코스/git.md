@@ -74,10 +74,40 @@ vcs 는 버전 컨트롤 시스템
 
   git commit -m "커밋 코멘트"
 
-- remote
+## 깃헙 레포지토리
 
-  git remote add (원격저장소 별칭) (원격저장소 URL)
+- remote
 
   git remote -v
 
-  git push (원격저장소 별칭) (원격저장소 레포지토리명)
+1. 깃헙 뉴 레포지토리 생성
+
+2. 연결
+
+   git remote add origin(원격저장소 별칭) (원격저장소 URL)
+
+3. 소스 코드 올림
+
+   git push origin(원격저장소 별칭) master(원격저장소 레포지토리명)
+
+## 기존 깃헙 레포지토리를 로컬로 받아오기
+
+1. 연결
+
+   git clone (원격저장소 URL)
+
+   연결과 함께 깃헙에 올려진 소스를 받아옴
+
+2. 수정 소스 코드 받아오기
+
+   git pull origin(원격저장소 별칭) master(원격저장소 레포지토리명)
+
+   자 근데 이러면 띠용하는게 있음 폴더 안에서 소스 폴더를 받기 때문에 cd 폴더명 쳐서 한번 더 들어가야함
+
+3. 연결 끊기
+
+   git remote remove origin
+
+## 브랜치(branch)
+
+브랜치 뜻은 나뭇가지. 가지가지 나누어지는 형태를 보고 정한듯
