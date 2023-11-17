@@ -242,8 +242,55 @@ function solution(board, moves) {
 }
 
 // 키패드 누르기
+// 이거 고생깨나 했다
 function solution(numbers, hand) {
+  const loc = {
+    1: [0, 0],
+    2: [0, 1],
+    3: [0, 2],
+    4: [1, 0],
+    5: [1, 1],
+    6: [1, 2],
+    7: [2, 0],
+    8: [2, 1],
+    9: [2, 2],
+    "*": [3, 0],
+    0: [3, 1],
+    "#": [3, 2],
+  };
   var answer = "";
+  let leftHand = loc["*"];
+  let rightHand = loc["#"];
+
+  const getDistance = (cur, next) =>
+    Math.abs(next[0] - cur[0]) + Math.abs(next[1] - cur[1]);
+
+  numbers.forEach((e) => {
+    if (e === 1 || e === 4 || e === 7) {
+      leftHand = loc[e];
+      answer += "L";
+      return;
+    } else if (e === 3 || e === 6 || e === 9) {
+      rightHand = loc[e];
+      answer += "R";
+      return;
+    }
+
+    // 위치 길이
+    const ld = getDistance(leftHand, loc[e]);
+    const rd = getDistance(rightHand, loc[e]);
+    if (ld > rd) {
+      rightHand = loc[e];
+      answer += "R";
+    } else if (ld < rd) {
+      leftHand = loc[e];
+      answer += "L";
+    } else {
+      answer += hand === "right" ? "R" : "L";
+      rightHand = hand === "right" ? loc[e] : rightHand;
+      leftHand = hand === "right" ? leftHand : loc[e];
+    }
+  });
   return answer;
 }
 
