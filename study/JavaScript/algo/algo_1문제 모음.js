@@ -362,3 +362,25 @@ function solution(players, callings) {
 
   return players;
 }
+
+// 신규 아이디 추천
+// 이거 완전 정규표현식 문제자너 ㅋㅋㅋㅋ
+// 아 정규표현식 어렵다 어려워
+function solution(new_id) {
+  //1, 2단계
+  new_id = new_id.toLowerCase().replace(/[^a-z0-9-_\.]/g, "");
+
+  // 3 ~ 6단계
+  new_id = new_id.replace(/\.+/g, ".").replace(/^\.|\.$/g, "");
+  console.log(new_id);
+  if (new_id.length === 0) new_id = "a";
+  else if (new_id.length > 15) new_id = new_id.substring(0, 15);
+  new_id = new_id.replace(/\.*$/, "");
+
+  // 7단계
+  while (new_id.length <= 2) new_id += new_id[new_id.length - 1];
+
+  return new_id;
+}
+
+// 개인정보 수집 유효기간
