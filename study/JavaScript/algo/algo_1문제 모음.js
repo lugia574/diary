@@ -436,7 +436,57 @@ function solution(today, terms, privacies) {
 }
 
 // 신고 결과 받기
+// 캬 확실히 내가 실력이 늘었다는게 느껴진다 저번에는 손도 못대던 문제였는데 어떻게 이걸 푸냐 ㅋ 그것도 js ㅋㅋ
 function solution(id_list, report, k) {
-  var answer = [];
+  const userSize = id_list.length;
+  let answer = Array(userSize).fill(0);
+  const reportSet = Array.from({ length: userSize }, () =>
+    Array(userSize).fill(0)
+  );
+  const reportCountArr = Array(userSize).fill(0);
+  const userCode = {};
+  id_list.map((name, idx) => {
+    userCode[name] = idx;
+  });
+
+  for (let i = 0; i < report.length; i++) {
+    let [a, b] = report[i].split(" ");
+    a = userCode[a];
+    b = userCode[b];
+    if (reportSet[a][b] === 1) continue;
+    reportSet[a][b] = 1;
+    reportCountArr[b]++;
+  }
+
+  // 신고될 애들 구하기
+  let blacklist = [];
+  for (let i = 0; i < userSize; i++)
+    if (reportCountArr[i] >= k) blacklist.push(i);
+
+  for (let i = 0; i < userSize; i++) {
+    for (let j = 0; j < blacklist.length; j++) {
+      if (reportSet[i][blacklist[j]] === 1) answer[i]++;
+    }
+  }
+  return answer;
+}
+
+// 신고결과 받기 best 풀이 방법
+// 확실히 쌈박하긴하네 바로 set, split 로 전처리 해서 박아버리자너
+function solution(id_list, report, k) {
+  let reports = [...new Set(report)].map((a) => {
+    return a.split(" ");
+  });
+  let counts = new Map();
+  for (const bad of reports) {
+    counts.set(bad[1], counts.get(bad[1]) + 1 || 1);
+  }
+  let good = new Map();
+  for (const report of reports) {
+    if (counts.get(report[1]) >= k) {
+      good.set(report[0], good.get(report[0]) + 1 || 1);
+    }
+  }
+  let answer = id_list.map((a) => good.get(a) || 0);
   return answer;
 }
