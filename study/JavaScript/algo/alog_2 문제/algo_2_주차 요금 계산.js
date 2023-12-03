@@ -35,11 +35,10 @@ function solution(fees, records) {
       answer.push(0);
       return;
     }
-    let cost = 0;
+    let cost = fees[1];
     totalUseTime[k] -= fees[0];
     if (totalUseTime[k] > 0)
-      cost = fees[1] + Math.ceil(totalUseTime[k] / fees[2]) * fees[3];
-    else cost = fees[1];
+      cost += Math.ceil(totalUseTime[k] / fees[2]) * fees[3];
 
     answer.push(cost);
   });

@@ -160,6 +160,8 @@ function solution(n) {
 // js 에서 0으로 채워진 배열 선언하기
 // 1차원
 const zeroFullArr1 = new Array(길이).fill(0);
+// 이렇게 하면 비어 있는 생태로 길이만큼
+const emptyFullArr1 = new Array(길이);
 
 // 2차원
 const zeroFullArr2 = Array.from({ length: 길이 }, () =>

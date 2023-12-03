@@ -17,7 +17,7 @@ public class algo_주식가격 {
                 if(prices[i] <= prices[j]) cnt++;
                 else break;
             }
-            answer[i] = cnt;
+            answer[i] = cnt;1
             System.out.println(answer[i]);
         }
 
