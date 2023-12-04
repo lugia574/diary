@@ -36,6 +36,8 @@ diary
 
 [java 객관식](https://opentutorials.org/module/1226/8066)
 
+[js 반복문 성능](https://blog.naver.com/thdwlsgus0/222269338961)
+
 ## 1. [Java](https://github.com/lugia574/diary/tree/main/study/java/md)
 
 ### 참고자료
