@@ -1,3 +1,4 @@
+// 틀린거
 function solution(number, k) {
   let answer = 0;
   const len = number.length;
@@ -16,6 +17,7 @@ function solution(number, k) {
   return answer.toString();
 }
 
+// 정답
 function solution(number, k) {
   const arr = [];
   for (let i = 0; i < number.length; i++) {
