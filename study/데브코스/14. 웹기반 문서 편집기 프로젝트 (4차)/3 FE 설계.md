@@ -74,6 +74,12 @@ npm i tsconfig-paths-webpack-plugin
 
   이렇게 해야함
 
-### 프로덕션 환경변수
+### 필요 라이브러리
 
-솔까 잘 모르겟음 ㅋㅋㅋ 이게 젤 중요한건데 ㅋㅋ
+- react-router-dom
+
+- @tanstack/react-query
+
+- styled-components
+
+- open-color
