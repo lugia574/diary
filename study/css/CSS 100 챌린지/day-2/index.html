@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="center">
+        <div class="menu-icon">
+          <div class="line-first line"></div>
+          <div class="line-second line"></div>
+          <div class="line-thrid line"></div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(".menu-icon").on("click", function () {
+        $(this).toggleClass("active");
+        $(this).find("div.child-element").removeClass("no-animation");
+      });
+    </script>
+  </body>
+</html>
